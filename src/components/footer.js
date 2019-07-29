@@ -17,9 +17,9 @@ const Footer = () => {
     }
   `)
   return (
-    <footer>
-      <p id="copyright">© {new Date().getFullYear()}</p>
-      <p id="credits">
+    <footer className="container mx-auto my-8 px-4 text-center">
+      <p className="text-sm">© {new Date().getFullYear()}</p>
+      <p className="text-sm">
         Built with{" "}
         <FontAwesomeIcon
           icon={faHeart}
@@ -39,11 +39,12 @@ const Footer = () => {
             width: auto;
             height: 0.8em;
             position: relative;
-            top: 2px;
+            top: -2px;
+            display: inline-block;
           `}
         />{" "}
         by{" "}
-        <a href="rstlss.org" target="_blank">
+        <a href="https://rstlss.org" target="_blank">
           <img
             src={data.RSTLSSLogo.publicURL}
             alt="RSTLSS"
@@ -51,7 +52,8 @@ const Footer = () => {
               width: auto;
               height: 1.25em;
               position: relative;
-              top: 5px;
+              top: -2px;
+              display: inline-block;
             `}
           />
         </a>
