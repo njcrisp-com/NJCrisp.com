@@ -5,6 +5,7 @@ module.exports = {
     author: `Rai Butera of RSTLSS.org`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
