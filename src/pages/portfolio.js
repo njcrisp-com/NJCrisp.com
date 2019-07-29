@@ -50,8 +50,6 @@ const Showcases = ({ projects }) => (
 const Portfolio = ({ data }) => (
   <Layout>
     <SEO title="Sound Design and Audio Production Portfolio" />
-    <PageTitle>Portfolio</PageTitle>
-    <p>Check this out:</p>
     <Showcases projects={data.showcases.edges} />
     <Link to="/">Go back to the homepage</Link>
   </Layout>
