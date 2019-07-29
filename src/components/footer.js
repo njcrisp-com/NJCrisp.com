@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import React from "react"
-import RSTLSSLogo from "../images/rstlss.svg"
+import RSTLSSLogo from "./rstlss.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
-import GBFlag from "../images/gb.svg"
+import GBFlag from "./gb.svg"
 import { css, jsx } from "@emotion/core"
 
 const Footer = () => (
