@@ -20,6 +20,7 @@
     "gatsby-plugin-postcss": "^2.1.2",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-sharp": "^2.2.9",
+    "gatsby-source-contentful": "^2.1.15",
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-sharp": "^2.2.4",
     "plyr": "^3.5.6",
