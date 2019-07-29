@@ -5,7 +5,7 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header>
     <div>
-      <h1 style={{ margin: 0 }}>
+      <h1>
         <Link to="/">Natan James Crisp</Link>
       </h1>
     </div>
