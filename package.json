@@ -17,6 +17,7 @@
     "eslint-config-react-app": "^4.0.1",
     "gatsby": "^2.13.39",
     "gatsby-image": "^2.2.6",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-postcss": "^2.1.2",

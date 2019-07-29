@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header className="pl-8 pt-8 mb-4">
+  <header className="pl-8 pt-8 mb-4 w-full">
     <div>
       <h1 className="capitalized text-4xl font-bold leading-none">
         <Link to="/" exact>
@@ -15,23 +15,29 @@ const Header = ({ siteTitle }) => (
       <p className="lowercase text-lg">Sound Design & Audio Production</p>
     </div>
     <div className="my-1">
-      <div className="w-2/3 bg-black h-1"></div>
+      <div className="w-9 bg-black h-1"></div>
     </div>
     <div>
-      <ul className="list-none text-3xl inline-flex leading-none pt-3">
-        <li className="uppercase inline mr-4">
-          <Link to="/" exact>
+      <ul className="w-1/2 block list-none text-3xl inline-flex leading-none pt-3 text-center text-gray-600 font-light">
+        <li className="uppercase inline-block text-center  mr-4">
+          <Link activeClassName="font-bold text-gray-900" to="/" exact>
             About
           </Link>
         </li>
-        <li className="uppercase inline mr-4">
-          <Link to="/portfolio">Portfolio</Link>
+        <li className="uppercase inline-block text-center  mr-4">
+          <Link activeClassName="font-bold text-gray-900" to="/portfolio">
+            Portfolio
+          </Link>
         </li>
-        <li className="uppercase inline mr-4">
-          <Link to="/tools">Tools</Link>
+        <li className="uppercase inline-block text-center  mr-4">
+          <Link activeClassName="font-bold text-gray-900" to="/tools">
+            Tools
+          </Link>
         </li>
-        <li className="uppercase inline mr-4">
-          <Link to="/contact">Contact</Link>
+        <li className="uppercase inline-block text-center  mr-4">
+          <Link activeClassName="font-bold text-gray-900" to="/contact">
+            Contact
+          </Link>
         </li>
       </ul>
     </div>

@@ -4,7 +4,7 @@ import Plyr from "react-plyr"
 import "../../node_modules/plyr/dist/plyr.css"
 
 const Player = ({ videoId }) => (
-  <div>
+  <div className="block w-1/2 my-4">
     <Plyr
       type="vimeo" // or "vimeo"
       videoId={videoId}
