@@ -8,10 +8,9 @@ const Player = ({ videoId }) => (
     <Plyr
       type="vimeo" // or "vimeo"
       videoId={videoId}
-      autoplay="true"
-      resetOnEnd="true"
-      clickToPlay="true"
-      autopause="true"
+      resetOnEnd={true}
+      clickToPlay={true}
+      autopause={true}
       quality="1080"
     />
   </div>
