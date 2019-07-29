@@ -15,7 +15,7 @@ import { format } from "date-fns"
 const Showcase = ({ project }) => {
   console.log(project)
   return (
-    <section className="m-4 p-4">
+    <section className="block my-4 mx-4 m-4 p-4">
       <h2>
         <span className="uppercase text-xl font-bold">
           {project.category ? project.category.categoryName : ""}
@@ -28,13 +28,17 @@ const Showcase = ({ project }) => {
         {format(project.date, `Do MMMM YYYY`)}
       </span>
       <Player videoId={project.vimeoID} />
-      <p className="text">
-        {documentToReactComponents(project.description.json)}
-      </p>
-      <h3 className="text-lg font-bold">Tools Used:</h3>
-      <ul className="text-m list-disc list-inside">
-        {map(({ name }) => <li>{name}</li>)(project.toolsUsed)}
-      </ul>
+      <div className="px-1">
+        <p className="text container text-lg">
+          {documentToReactComponents(project.description.json)}
+        </p>
+        <h3 className="text-xl font-bold mt-4">Tools Used:</h3>
+        <ul className="text-m list-disc list-inside">
+          {map(({ name }) => <li className="text-lg">{name}</li>)(
+            project.toolsUsed
+          )}
+        </ul>
+      </div>
     </section>
   )
 }

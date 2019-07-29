@@ -39,6 +39,16 @@ module.exports = {
         accessToken: process.env.GATBSY_CONTENTFUL_KEY,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Karla\:400,400i,700,700i`, // you can also specify font weights and styles
+          `Rubik\:300,300i,400,400i,500,500i,700,700i`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
