@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "njcrisp.com",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Sound Design and Audio Production Portfolio for Natan James Crisp",
+  "version": "0.2.0",
+  "author": "Rai Butera <rai@rstlss.org>",
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
