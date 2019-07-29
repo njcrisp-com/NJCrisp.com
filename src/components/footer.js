@@ -43,7 +43,7 @@ const Footer = () => {
           `}
         />{" "}
         by{" "}
-        <a href="rstlss.org" target="_blank">
+        <a href="https://rstlss.org" target="_blank">
           <img
             src={data.RSTLSSLogo.publicURL}
             alt="RSTLSS"
