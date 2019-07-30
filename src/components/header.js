@@ -3,13 +3,13 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header className="mb-4 w-screen">
+  <header className="mb-4 w-screen pt-8">
     <div>
       <h1 className="capitalized text-4xl font-bold leading-none">
         <Link to="/" exact>
-          <span class="block">Natan</span>
-          <span class="block">James</span>
-          <span class="block">Crisp</span>
+          <span class="block tracking-tighter">Natan</span>
+          <span class="block tracking-tighter">James</span>
+          <span class="block tracking-tighter">Crisp</span>
         </Link>
       </h1>
       <p className="lowercase text-lg">Sound Design & Audio Production</p>

@@ -26,9 +26,9 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="font-sans tracking-tighter w-full">
+    <div id="layout" className="font-sans tracking-tighter container mx-auto">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="min-h-screen h-full">
+      <div id="main">
         <main>{children}</main>
       </div>
       <Footer />
