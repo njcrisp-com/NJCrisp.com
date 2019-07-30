@@ -27,12 +27,9 @@ const Layout = ({ children }) => {
 
   return (
     <div id="layout" className="">
-      <div
-        id="container"
-        className="font-sans tracking-tighter mx-auto container"
-      >
+      <div id="container" className="font-sans tracking-tighter px-4 md:px-8">
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div id="main" className="px-8">
+        <div id="main" className="py-2 px-1 md:px-8 min-h-screen">
           <main>{children}</main>
         </div>
         <Footer />

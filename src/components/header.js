@@ -6,7 +6,7 @@ import React from "react"
 import { css, jsx } from "@emotion/core"
 
 const Header = ({ siteTitle }) => (
-  <header className="mb-4 w-screen pt-2 md:pt-8 pl-2 md:pl-8">
+  <header className="mb-2 w-full pt-4 md:pt-8">
     <div>
       <h1 className="capitalized text-4xl font-bold leading-none">
         <Link to="/" exact>
@@ -47,24 +47,37 @@ const Header = ({ siteTitle }) => (
       <div className="w-3/4 bg-gray-400 h-1"></div>
     </div>
 
-    <ul className="w-1/2 block list-none xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl inline-flex leading-none pt-2 text-center text-gray-600 font-light">
+    <ul className="tracking-widest w-1/2 block list-none xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl inline-flex leading-none pt-2 text-center text-gray-600 font-light m-0">
       <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-        <Link activeClassName="font-bold text-gray-900" to="/" exact>
+        <Link
+          activeClassName="font-bold tracking-wider text-gray-900"
+          to="/"
+          exact
+        >
           About
         </Link>
       </li>
       <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-        <Link activeClassName="font-bold text-gray-900" to="/portfolio">
+        <Link
+          activeClassName="font-bold tracking-wider text-gray-900"
+          to="/portfolio"
+        >
           Portfolio
         </Link>
       </li>
       <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-        <Link activeClassName="font-bold text-gray-900" to="/tools">
+        <Link
+          activeClassName="font-bold tracking-wider text-gray-900"
+          to="/tools"
+        >
           Tools
         </Link>
       </li>
       <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-        <Link activeClassName="font-bold text-gray-900" to="/contact">
+        <Link
+          activeClassName="font-bold tracking-wider text-gray-900"
+          to="/contact"
+        >
           Contact
         </Link>
       </li>

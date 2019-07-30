@@ -15,12 +15,12 @@ import { format } from "date-fns"
 const Showcase = ({ project }) => {
   console.log(project)
   return (
-    <section className="block mt-8 pb-4 mb-4">
+    <section className="block pb-4 mb-8 xs:min-h-screen md:min-h-0">
       <h2>
         <span className="uppercase sm:text-base md:text-xl sm:text-sm font-bold">
           {project.category ? project.category.categoryName : ""}
         </span>
-        <span className="uppercase text-2xl sm:text-3xl md:text-5xl lg:text-6xl block leading-none font-bold">
+        <span className="uppercase text-4xl md:text-5xl lg:text-6xl block leading-none font-bold">
           {project.title}
         </span>
       </h2>
@@ -51,15 +51,24 @@ const Showcases = ({ projects }) => (
   </div>
 )
 
+const Introduction = ({ data }) => (
+  <div className="bg-red-200 mb-8 md:mb-24 max-w-4xl text-lg text-center md:text-left mx-auto md:mx-0">
+    {documentToReactComponents(data.page.text.json)}
+  </div>
+)
+
 const Portfolio = ({ data }) => (
   <Layout>
-    <SEO title="Sound Design and Audio Production Portfolio" />
-    <Showcases projects={data.showcases.edges} />
+    <div className="">
+      <SEO title="Sound Design Portfolio" />
+      <Introduction data={data} />
+      <Showcases projects={data.showcases.edges} />
+    </div>
   </Layout>
 )
 
 export const query = graphql`
-  query PortfolioQuery {
+  query PortfolioQuery2 {
     page: contentfulPage(label: { eq: "Portfolio" }) {
       id
       label

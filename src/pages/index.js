@@ -12,26 +12,28 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home/About" />
-      <div style={{ maxWidth: `150px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
+      <div className="bg-red-200 w-full max-w-3xl m-auto text-xl">
+        <div style={{ maxWidth: `150px`, marginBottom: `1.45rem` }}>
+          <Image />
+        </div>
 
-      <div id="about-text">
-        {documentToReactComponents(data.page.text.json)}
-      </div>
-      <div id="secondary-navigation">
-        <p>Whilst you are here, why not...</p>
-        <ul>
-          <li>
-            <Link to="/portfolio">Check out my work</Link>
-          </li>
-          <li>
-            <Link to="/tools">Learn about the tools I love to use</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact me</Link>
-          </li>
-        </ul>
+        <div id="about-text">
+          {documentToReactComponents(data.page.text.json)}
+        </div>
+        <div id="secondary-navigation" className="w-full max-w-md ">
+          <p>Whilst you are here, why not...</p>
+          <ul>
+            <li>
+              <Link to="/portfolio">Check out my work</Link>
+            </li>
+            <li>
+              <Link to="/tools">Learn about the tools I love to use</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact me</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </Layout>
   )

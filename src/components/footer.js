@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
+import { faCopyright } from "@fortawesome/free-regular-svg-icons"
 import { css, jsx } from "@emotion/core"
 
 const Footer = () => {
@@ -17,9 +18,25 @@ const Footer = () => {
     }
   `)
   return (
-    <footer className="container mx-auto mt-20 px-4 text-center">
-      <p className="text-sm">© {new Date().getFullYear()}</p>
-      <p className="text-sm">
+    <footer className="container mx-auto my-20 px-4 text-center">
+      <p className="text-lg mb-3">
+        <FontAwesomeIcon
+          icon={faCopyright}
+          alt="Love"
+          css={css`
+            filter: opacity(0.66);
+            margin-right: 2pt;
+            position: relative;
+            top: 1px;
+          `}
+        />{" "}
+        {new Date().getFullYear()}
+        <strong className="block text-base tracking-tightest">
+          <Link to="/contact">Natan James Crisp</Link>
+        </strong>
+      </p>
+
+      <a href="https://rstlss.org" target="_blank" className="text-sm">
         Built with{" "}
         <FontAwesomeIcon
           icon={faHeart}
@@ -44,20 +61,18 @@ const Footer = () => {
           `}
         />{" "}
         by{" "}
-        <a href="https://rstlss.org" target="_blank">
-          <img
-            src={data.RSTLSSLogo.publicURL}
-            alt="RSTLSS"
-            css={css`
-              width: auto;
-              height: 1.25em;
-              position: relative;
-              top: -2px;
-              display: inline-block;
-            `}
-          />
-        </a>
-      </p>
+        <img
+          src={data.RSTLSSLogo.publicURL}
+          alt="RSTLSS"
+          css={css`
+            width: auto;
+            height: 1.25em;
+            position: relative;
+            top: -2px;
+            display: inline-block;
+          `}
+        />
+      </a>
     </footer>
   )
 }
