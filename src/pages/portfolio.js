@@ -17,14 +17,14 @@ const Showcase = ({ project }) => {
   return (
     <section className="block mt-8 pb-4 mb-4">
       <h2>
-        <span className="uppercase text-xl font-bold">
+        <span className="uppercase sm:text-base md:text-xl sm:text-sm font-bold">
           {project.category ? project.category.categoryName : ""}
         </span>
-        <span className="uppercase text-6xl block leading-none font-bold">
+        <span className="uppercase text-2xl sm:text-3xl md:text-5xl lg:text-6xl block leading-none font-bold">
           {project.title}
         </span>
       </h2>
-      <span className="capitalize text-xl">
+      <span className="capitalize text-base sm:text-lg md:text-xl lg: text-xl">
         {format(project.date, `Do MMMM YYYY`)}
       </span>
       <Player videoId={project.vimeoID} />
