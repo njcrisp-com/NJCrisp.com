@@ -6,7 +6,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import { faCopyright } from "@fortawesome/free-regular-svg-icons"
 import { css, jsx } from "@emotion/core"
 
-const Footer = () => {
+const Footer = ({ lightsOn }) => {
   const data = useStaticQuery(graphql`
     {
       RSTLSSLogo: file(relativePath: { eq: "rstlss.svg" }) {
@@ -17,8 +17,13 @@ const Footer = () => {
       }
     }
   `)
+
+  const textColor = lightsOn ? "" : "text-gray-100"
+  const backgroundColor = lightsOn ? "" : "bg-black"
   return (
-    <footer className="container mx-auto my-20 px-4 text-center">
+    <footer
+      className={`container mx-auto mt-20 pb-20 px-4 text-center ${textColor} ${backgroundColor}`}
+    >
       <p className="text-lg mb-3">
         <FontAwesomeIcon
           icon={faCopyright}

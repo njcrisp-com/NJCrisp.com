@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
         <div id="about-text">
           {documentToReactComponents(data.page.text.json)}
         </div>
-        <div id="secondary-navigation" className="w-full max-w-md ">
+        <div id="secondary-navigation" className="w-full max-w-md text-left">
           <p>Whilst you are here, why not...</p>
           <ul>
             <li>
