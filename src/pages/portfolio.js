@@ -11,6 +11,7 @@ import loadable from "@loadable/component"
 const Player = loadable(() => import("../components/player"))
 import PageTitle from "../components/page-title"
 import { format } from "date-fns"
+import Introduction from "../components/introduction"
 
 const Showcase = ({ project }) => {
   console.log(project)
@@ -48,12 +49,6 @@ const Showcases = ({ projects }) => (
     {map(project => <Showcase project={project.node} key={project.node.id} />)(
       projects
     )}
-  </div>
-)
-
-const Introduction = ({ data }) => (
-  <div className="mb-8 md:mb-24 max-w-4xl md:text-lg text-center md:text-left mx-auto md:mx-0">
-    {documentToReactComponents(data.page.text.json)}
   </div>
 )
 

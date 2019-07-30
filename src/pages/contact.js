@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Introduction from "../components/introduction"
 
 export const query = graphql`
   query ContactQuery {
@@ -76,7 +77,7 @@ const ContactForm = () => (
 const ContactPage = ({ data }) => (
   <Layout>
     <SEO title="Contact" />
-    {documentToReactComponents(data.page.text.json)}
+    <Introduction data={data} />
     <ContactForm />
   </Layout>
 )
