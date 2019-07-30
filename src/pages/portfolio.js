@@ -55,7 +55,6 @@ const Portfolio = ({ data }) => (
   <Layout>
     <SEO title="Sound Design and Audio Production Portfolio" />
     <Showcases projects={data.showcases.edges} />
-    <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
 
@@ -69,7 +68,7 @@ export const query = graphql`
         json
       }
     }
-    showcases: allContentfulShowcase {
+    showcases: allContentfulShowcase(sort: { fields: date, order: DESC }) {
       edges {
         node {
           id

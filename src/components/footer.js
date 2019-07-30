@@ -17,7 +17,7 @@ const Footer = () => {
     }
   `)
   return (
-    <footer className="container mx-auto my-8 px-4 text-center">
+    <footer className="container mx-auto mt-20 px-4 text-center">
       <p className="text-sm">© {new Date().getFullYear()}</p>
       <p className="text-sm">
         Built with{" "}
