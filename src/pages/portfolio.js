@@ -15,7 +15,7 @@ import { format } from "date-fns"
 const Showcase = ({ project }) => {
   console.log(project)
   return (
-    <section className="block my-4 mx-4 m-4 p-4">
+    <section className="block">
       <h2>
         <span className="uppercase text-xl font-bold">
           {project.category ? project.category.categoryName : ""}

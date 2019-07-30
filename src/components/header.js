@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header className="pl-8 pt-8 mb-4 w-full">
+  <header className="mb-4 w-screen">
     <div>
       <h1 className="capitalized text-4xl font-bold leading-none">
         <Link to="/" exact>
@@ -15,7 +15,7 @@ const Header = ({ siteTitle }) => (
       <p className="lowercase text-lg">Sound Design & Audio Production</p>
     </div>
     <div className="my-1">
-      <div className="w-9 bg-black h-1"></div>
+      <div className="w-3/4 bg-black h-1"></div>
     </div>
     <div>
       <ul className="w-1/2 block list-none text-3xl inline-flex leading-none pt-3 text-center text-gray-600 font-light">
