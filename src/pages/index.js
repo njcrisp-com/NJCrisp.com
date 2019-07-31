@@ -16,62 +16,65 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+const SecondaryNavigation = () => (
+  <section
+    id="secondary-navigation"
+    className="bg-yellow-200 inline-block w-full"
+  >
+    <p className="text-base text-gray-600">Whilst you are here, why not...</p>
+    <ul className="ml-4">
+      <li>
+        <Link to="/portfolio">
+          <FontAwesomeIcon icon={faFileAudio} className="mr-1 text-green-500" />{" "}
+          Check out my work
+        </Link>
+      </li>
+      <li>
+        <Link to="/tools">
+          <FontAwesomeIcon icon={faTools} className="mr-1 text-orange-500" />{" "}
+          Learn about the tools I love to use
+        </Link>
+      </li>
+      <li>
+        <Link to="/contact">
+          <FontAwesomeIcon icon={faComments} className="mr-1 text-pink-500" />{" "}
+          Contact me
+        </Link>
+      </li>
+    </ul>
+  </section>
+)
+
+const Portrait = ({ data }) => {
+  return (
+    <img
+      css={css`
+        width: auto;
+        height: 50vh;
+        max-height: 400px;
+      `}
+      src={data.Portrait.publicURL}
+      alt="Portrait"
+      className=""
+    />
+  )
+}
+
+const AboutText = ({ data }) => {
+  return <div id="about-text">{documentToReactComponents(data)}</div>
+}
+
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home/About" />
-      <div className="relative w-full max-w-3xl m-auto text-xl md:pt-20 lg:pt-30 xl:pt-40">
-        <img
-          css={css`
-            width: auto;
-            height: 50vh;
-            max-height: 400px;
-          `}
-          src={data.Portrait.publicURL}
-          alt="Portrait"
-          className="float-left mr-8"
-        />
-        <div id="about-text">
-          {documentToReactComponents(data.page.text.json)}
+      <section id="about-wrapper">
+        <div className="relative w-full m-auto bg-red-500">
+          <Portrait data={data} />
+          <AboutText data={data.page.text.json} />
+          <SecondaryNavigation />
         </div>
-        <div
-          id="secondary-navigation"
-          className="w-full max-w-md text-left mt-12 absolute right-0"
-        >
-          <p className="text-base text-gray-600">
-            Whilst you are here, why not...
-          </p>
-          <ul className="ml-4">
-            <li>
-              <Link to="/portfolio">
-                <FontAwesomeIcon
-                  icon={faFileAudio}
-                  className="mr-1 text-green-500"
-                />{" "}
-                Check out my work
-              </Link>
-            </li>
-            <li>
-              <Link to="/tools">
-                <FontAwesomeIcon
-                  icon={faTools}
-                  className="mr-1 text-orange-500"
-                />{" "}
-                Learn about the tools I love to use
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact">
-                <FontAwesomeIcon
-                  icon={faComments}
-                  className="mr-1 text-pink-500"
-                />{" "}
-                Contact me
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      </section>
     </Layout>
   )
 }
