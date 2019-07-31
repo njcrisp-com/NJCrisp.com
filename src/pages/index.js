@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const SecondaryNavigation = () => (
   <section
     id="secondary-navigation"
-    className="bg-yellow-200 inline-block w-full"
+    className="bg-yellow-100 inline-block w-full"
   >
     <p className="text-base text-gray-600">Whilst you are here, why not...</p>
     <ul className="ml-4">
@@ -69,7 +69,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home/About" />
       <section id="about-wrapper">
-        <div className="relative w-full m-auto bg-red-500">
+        <div className="relative w-full m-auto bg-red-100">
           <Portrait data={data} />
           <AboutText data={data.page.text.json} />
           <SecondaryNavigation />

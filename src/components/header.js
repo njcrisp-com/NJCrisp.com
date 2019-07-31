@@ -5,6 +5,48 @@ import PropTypes from "prop-types"
 import React from "react"
 import { css, jsx } from "@emotion/core"
 
+const Navbar = ({ activeLinkColor, linkColor }) => {
+  return (
+    <ul
+      className={`tracking-widest w-1/2 block list-none xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl inline-flex leading-none pt-2 text-center font-light m-0 ${linkColor}`}
+    >
+      <li className="uppercase inline-block text-center  mr-2 md:mr-4">
+        <Link
+          activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
+          to="/"
+          exact
+        >
+          About
+        </Link>
+      </li>
+      <li className="uppercase inline-block text-center  mr-2 md:mr-4">
+        <Link
+          activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
+          to="/portfolio"
+        >
+          Portfolio
+        </Link>
+      </li>
+      <li className="uppercase inline-block text-center  mr-2 md:mr-4">
+        <Link
+          activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
+          to="/tools"
+        >
+          Tools
+        </Link>
+      </li>
+      <li className="uppercase inline-block text-center  mr-2 md:mr-4">
+        <Link
+          activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
+          to="/contact"
+        >
+          Contact
+        </Link>
+      </li>
+    </ul>
+  )
+}
+
 const Header = ({ siteTitle, lightsOn }) => {
   const activeLinkColor = lightsOn ? "text-gray-900" : "text-gray-100"
   const linkColor = lightsOn ? "text-gray-600" : "text-gray-600"
@@ -52,43 +94,7 @@ const Header = ({ siteTitle, lightsOn }) => {
         <div className="w-3/4 bg-gray-400 h-1"></div>
       </div>
 
-      <ul
-        className={`tracking-widest w-1/2 block list-none xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl inline-flex leading-none pt-2 text-center font-light m-0 ${linkColor}`}
-      >
-        <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link
-            activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
-            to="/"
-            exact
-          >
-            About
-          </Link>
-        </li>
-        <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link
-            activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
-            to="/portfolio"
-          >
-            Portfolio
-          </Link>
-        </li>
-        <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link
-            activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
-            to="/tools"
-          >
-            Tools
-          </Link>
-        </li>
-        <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link
-            activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
-            to="/contact"
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
+      <Navbar activeLinkColor={activeLinkColor} linkColor={linkColor} />
     </header>
   )
 }
