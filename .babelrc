@@ -1,0 +1,23 @@
+{
+  "plugins": [
+    "macros",
+    [
+      "tailwind-components",
+      {
+        "config": "./tailwind.config.js",
+        "format": "auto"
+      }
+    ],
+    "@babel/plugin-proposal-optional-chaining"
+  ],
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
+  ]
+}

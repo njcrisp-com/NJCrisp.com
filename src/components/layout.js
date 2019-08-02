@@ -34,11 +34,11 @@ const Layout = ({ lightsOn, children }) => {
         <Header lightsOn={lightsOn} siteTitle={data.site.siteMetadata.title} />
         <div
           id="main"
-          className={`pt-2 px-1 md:pt-8 lg:pt-12 xl:pt-16 md:px-8 min-h-screen ${textColor}`}
+          className={`pt-2 md:pt-8 lg:pt-12 xl:pt-16 md:px-8 min-h-screen ${textColor}`}
         >
           <main>{children}</main>
+          <Footer lightsOn={lightsOn} />
         </div>
-        <Footer lightsOn={lightsOn} />
       </div>
     </div>
   )

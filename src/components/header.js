@@ -9,38 +9,28 @@ const Navbar = ({ activeLinkColor, linkColor }) => {
   return (
     <nav>
       <ul
-        className={`tracking-widest w-1/2 block list-none xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl inline-flex leading-none pt-2 text-center font-light m-0 ${linkColor}`}
+        className={`tracking-normal w-1/2 block list-none xl:text-3xl lg:text-2xl md:text-2xl sm:text-lg xs:text-base inline-flex leading-none pt-2 text-center font-light m-0 ${linkColor} overflow-visible max-w-screen`}
       >
         <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link
-            activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
-            to="/"
-            exact
-          >
+          <Link activeClassName={`font-bold ${activeLinkColor}`} to="/" exact>
             About
           </Link>
         </li>
         <li className="uppercase inline-block text-center  mr-2 md:mr-4">
           <Link
-            activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
+            activeClassName={`font-bold ${activeLinkColor}`}
             to="/portfolio"
           >
             Portfolio
           </Link>
         </li>
         <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link
-            activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
-            to="/tools"
-          >
+          <Link activeClassName={`font-bold ${activeLinkColor}`} to="/tools">
             Tools
           </Link>
         </li>
         <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link
-            activeClassName={`font-bold tracking-wider ${activeLinkColor}`}
-            to="/contact"
-          >
+          <Link activeClassName={`font-bold ${activeLinkColor}`} to="/contact">
             Contact
           </Link>
         </li>
