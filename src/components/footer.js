@@ -20,9 +20,10 @@ const Footer = ({ lightsOn }) => {
 
   const textColor = lightsOn ? "" : "text-gray-100"
   const backgroundColor = lightsOn ? "" : "bg-black"
+
   return (
     <footer
-      className={`w-full max-w-full mt-20 nx0 pb-20 px-4 text-center ${textColor} ${backgroundColor}`}
+      className={`w-full max-w-full pt-10 nx0 pb-10 px-4 text-center ${textColor} ${backgroundColor}`}
     >
       <div className="mx-auto">
         <p className="text-sm mb-3">
