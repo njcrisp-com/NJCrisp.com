@@ -92,7 +92,7 @@ const Header = ({ siteTitle, lightsOn }) => {
 }
 
 Header.propTypes = {
-  lightsOn: PropTypes.boolean,
+  lightsOn: PropTypes.bool,
 }
 
 Header.defaultProps = {

@@ -37,6 +37,7 @@ module.exports = {
       options: {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
         accessToken: process.env.GATBSY_CONTENTFUL_KEY,
+        downloadLocal: true,
       },
     },
     {

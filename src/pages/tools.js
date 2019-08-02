@@ -10,6 +10,8 @@ import Introduction from "../components/introduction"
 import { map } from "rambda"
 import { css, jsx } from "@emotion/core"
 
+import { Img } from "gatsby-image"
+
 export const query = graphql`
   query ToolsQuery {
     page: contentfulPage(label: { eq: "Tools" }) {
@@ -50,6 +52,7 @@ const ToolList = ({ tools }) => {
               <h1 className="text-4xl md:text-5xl uppercase font-bold tracking-normal">
                 {node.name}
               </h1>
+
               <img
                 src={node.logo.file.url}
                 alt={`${node.name} logo`}
