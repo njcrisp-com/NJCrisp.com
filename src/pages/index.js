@@ -22,11 +22,11 @@ const SecondaryNavigation = () => (
   <section id="secondary-navigation" className="flex text-left mt-10 mr-5">
     <div className="flex-grow"></div>
     <div className="flex-shrink">
-      <p className="text-base text-gray-600 text-center sm:text-left">
+      <p className="text-base text-gray-600 text-center sm:text-left pt-6">
         Whilst you are here, why not...
       </p>
       <ul className="ml-4">
-        <li className="text-gray-800">
+        <li className="text-gray-800 my-3">
           <Link to="/portfolio">
             <FontAwesomeIcon
               icon={faFileAudio}
@@ -35,14 +35,14 @@ const SecondaryNavigation = () => (
             Check out <span className="font-bold text-blue-600">my work</span>
           </Link>
         </li>
-        <li className="text-gray-800">
+        <li className="text-gray-800 my-3">
           <Link to="/tools">
             <FontAwesomeIcon icon={faTools} className="mr-1 text-orange-500" />{" "}
             Learn about the{" "}
             <span className="font-bold text-blue-600">tools</span> I love to use
           </Link>
         </li>
-        <li className="text-gray-800">
+        <li className="text-gray-800 my-3">
           <Link to="/contact">
             <FontAwesomeIcon icon={faComments} className="mr-1 text-pink-500" />{" "}
             Get in <span className="font-bold text-blue-600">contact</span> with
@@ -86,7 +86,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home/About" />
       <section id="about-wrapper">
-        <div className="w-full max-w-screen m-auto flex flex-wrap py-0 md:py-6 lg:py-20">
+        <div className="w-full max-w-screen m-auto h-full flex flex-wrap py-0 md:py-6 lg:py-20">
           <HomepagePhoto data={data} />
           <AboutText data={data.page.text.json} />
         </div>

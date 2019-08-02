@@ -11,26 +11,36 @@ const Navbar = ({ activeLinkColor, linkColor }) => {
       <ul
         className={`tracking-normal w-1/2 block list-none xl:text-3xl lg:text-2xl md:text-2xl sm:text-lg xs:text-base inline-flex leading-none pt-2 text-center font-light m-0 ${linkColor} overflow-visible max-w-screen`}
       >
-        <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link activeClassName={`font-bold ${activeLinkColor}`} to="/" exact>
+        <li className="uppercase hover:text-red-300 inline-block text-center  mr-2 md:mr-4">
+          <Link
+            activeClassName={`font-bold pointer-events-none ${activeLinkColor}`}
+            to="/"
+            exact
+          >
             About
           </Link>
         </li>
-        <li className="uppercase inline-block text-center  mr-2 md:mr-4">
+        <li className="uppercase hover:text-red-300 inline-block text-center  mr-2 md:mr-4">
           <Link
-            activeClassName={`font-bold ${activeLinkColor}`}
+            activeClassName={`font-bold pointer-events-none ${activeLinkColor}`}
             to="/portfolio"
           >
             Portfolio
           </Link>
         </li>
-        <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link activeClassName={`font-bold ${activeLinkColor}`} to="/tools">
+        <li className="uppercase hover:text-red-300 inline-block text-center  mr-2 md:mr-4">
+          <Link
+            activeClassName={`font-bold pointer-events-none ${activeLinkColor}`}
+            to="/tools"
+          >
             Tools
           </Link>
         </li>
-        <li className="uppercase inline-block text-center  mr-2 md:mr-4">
-          <Link activeClassName={`font-bold ${activeLinkColor}`} to="/contact">
+        <li className="uppercase hover:text-red-300 inline-block text-center  mr-2 md:mr-4">
+          <Link
+            activeClassName={`font-bold pointer-events-none ${activeLinkColor}`}
+            to="/contact"
+          >
             Contact
           </Link>
         </li>
