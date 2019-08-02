@@ -45,7 +45,11 @@ const Footer = ({ lightsOn }) => {
           </strong>
         </p>
 
-        <a href="https://rstlss.org" target="_blank" className="text-sm">
+        <a
+          href="https://rstlss.org"
+          target="_blank"
+          className="text-base hover:font-bold"
+        >
           Hand-crafted with{" "}
           <FontAwesomeIcon
             icon={faHeart}

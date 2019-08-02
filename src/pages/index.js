@@ -86,7 +86,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home/About" />
       <section id="about-wrapper">
-        <div className="w-full max-w-screen m-auto flex flex-wrap py-0 md:py-6 lg:py-20">
+        <div className="w-full max-w-screen m-auto h-full flex flex-wrap py-0 md:py-6 lg:py-20">
           <HomepagePhoto data={data} />
           <AboutText data={data.page.text.json} />
         </div>

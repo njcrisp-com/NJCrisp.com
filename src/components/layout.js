@@ -44,7 +44,7 @@ const Layout = ({ lightsOn, children }) => {
         <Header lightsOn={lightsOn} siteTitle={data.site.siteMetadata.title} />
         <div
           id="main"
-          className={`pt-2 md:pt-8 lg:pt-12 xl:pt-16 md:px-8 ${textColor} flex-1`}
+          className={`pt-2 md:pt-8 lg:pt-12 xl:pt-16 md:px-8 ${textColor} flex-auto flex-grow`}
         >
           <main>{children}</main>
         </div>
