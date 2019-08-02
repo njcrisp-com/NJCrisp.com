@@ -102,12 +102,10 @@ const Header = ({ siteTitle, lightsOn }) => {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
   lightsOn: PropTypes.boolean,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
   lightsOn: true,
 }
 
