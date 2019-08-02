@@ -47,3 +47,7 @@ h6 {
 }
 
 @tailwind utilities;
+
+.bg-darkgray {
+  background-color: #090909;
+}

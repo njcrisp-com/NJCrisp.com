@@ -19,7 +19,7 @@ const Footer = ({ lightsOn }) => {
   `)
 
   const textColor = lightsOn ? "" : "text-gray-100"
-  const backgroundColor = lightsOn ? "" : "bg-black"
+  const backgroundColor = lightsOn ? "" : "bg-darkgray"
 
   return (
     <footer

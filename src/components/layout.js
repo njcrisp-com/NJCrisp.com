@@ -26,7 +26,7 @@ const Layout = ({ lightsOn, children }) => {
     }
   `)
 
-  const backgroundColor = lightsOn ? "bg-white" : "bg-black"
+  const backgroundColor = lightsOn ? "bg-white" : "bg-darkgray"
   const textColor = lightsOn ? "" : "text-gray-300"
 
   return (
