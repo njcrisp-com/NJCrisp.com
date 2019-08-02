@@ -19,13 +19,19 @@ const Showcase = ({ project }) => {
     <section className="block pb-4 mb-8 md:mb-20 xs:min-h-screen md:min-h-0">
       <h2 className="text-white">
         <span className="text-gray-500 uppercase sm:text-base md:text-xl sm:text-sm font-bold">
-          {project.category ? project.category.categoryName : ""}
+          {project.category ? `${project.category.categoryName}: ` : ""}
         </span>
-        <span className="uppercase text-4xl md:text-5xl lg:text-6xl block leading-none font-bold relative top">
+        <span
+          className="uppercase text-4xl md:text-5xl lg:text-6xl block leading-none font-bold relative"
+          style={{ top: "-4pt" }}
+        >
           {project.title}
         </span>
       </h2>
-      <span className="text-gray-500 capitalize text-base sm:text-lg md:text-xl lg: text-xl text-white">
+      <span
+        className="text-gray-500 capitalize text-base sm:text-lg md:text-xl lg: text-xl text-white relative"
+        style={{ top: "-4pt" }}
+      >
         {format(project.date, `Do MMMM YYYY`)}
       </span>
       <Player videoId={project.vimeoID} />
@@ -33,11 +39,11 @@ const Showcase = ({ project }) => {
         <p className="text container text-lg">
           {documentToReactComponents(project.description.json)}
         </p>
-        <h3 className="text-xl font-bold mt-4">Tools Used:</h3>
+        <h3 className="text-xl text-gray-100 font-bold mt-4">Tools Used:</h3>
         <ul className="text-m list-disc list-inside">
-          {map(({ name }) => <li className="text-lg">{name}</li>)(
-            project.toolsUsed
-          )}
+          {map(({ name }) => (
+            <li className="text-lg lg:text-xl xl:text-2xl">{name}</li>
+          ))(project.toolsUsed)}
         </ul>
       </div>
     </section>
