@@ -83,7 +83,7 @@ const Header = ({ siteTitle, lightsOn }) => {
         </p>
       </div>
       <div className="mt-1">
-        <div className="w-3/4 bg-gray-400 h-1"></div>
+        <div className="w-3/4 bg-gray-400 h-1 rounded"></div>
       </div>
 
       <Navbar activeLinkColor={activeLinkColor} linkColor={linkColor} />

@@ -56,7 +56,7 @@ const ToolList = ({ tools }) => {
               <img
                 src={node.logo.file.url}
                 alt={`${node.name} logo`}
-                className="mb-3 w-64 w-full mx-auto mb-6 lg:mb-0"
+                className="mb-3 w-64 w-full mx-auto mb-6 lg:mb-0 rounded"
               />
             </div>
           </div>

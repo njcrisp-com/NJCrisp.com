@@ -61,7 +61,7 @@ const HomepagePhoto = ({ data }) => {
         fluid={data.HomepagePhoto.childImageSharp.fluid}
         alt="HomepagePhoto"
         css={css``}
-        className="w-full"
+        className="w-full rounded"
       />
     </figure>
   )
