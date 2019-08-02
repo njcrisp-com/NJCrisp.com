@@ -18,7 +18,7 @@ const Footer = ({ lightsOn }) => {
     }
   `)
 
-  const textColor = lightsOn ? "" : "text-gray-100"
+  const textColor = lightsOn ? "text-gray-700" : "text-gray-100"
   const backgroundColor = lightsOn ? "" : "bg-darkgray"
 
   return (
@@ -26,7 +26,7 @@ const Footer = ({ lightsOn }) => {
       className={`w-full max-w-full pt-10 nx0 pb-10 px-4 text-center ${textColor} ${backgroundColor}`}
     >
       <div className="mx-auto">
-        <p className="text-sm mb-3">
+        <p className="text-sm my-6">
           <FontAwesomeIcon
             icon={faCopyright}
             alt="Love"
