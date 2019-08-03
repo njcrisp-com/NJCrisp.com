@@ -72,8 +72,10 @@ const ToolList = ({ tools }) => {
 const ToolsPage = ({ data }) => (
   <Layout>
     <SEO title="Tools" />
-    <Introduction data={data} />
-    <ToolList tools={data.tools} />
+    <div className="lg:px-8 xl:px-20">
+      <Introduction lightsOn data={data} />
+      <ToolList tools={data.tools} />
+    </div>
   </Layout>
 )
 

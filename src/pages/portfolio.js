@@ -34,11 +34,11 @@ const Showcase = ({ project }) => {
       >
         {format(project.date, `Do MMMM YYYY`)}
       </span>
+      <p className="text container text-lg">
+        {documentToReactComponents(project.description.json)}
+      </p>
       <Player videoId={project.vimeoID} />
       <div className="px-1">
-        <p className="text container text-lg">
-          {documentToReactComponents(project.description.json)}
-        </p>
         <h3 className="text-xl text-gray-100 font-bold mt-4">Tools Used:</h3>
         <ul className="text-m list-disc list-inside">
           {map(({ name }) => (
@@ -62,8 +62,10 @@ const Portfolio = ({ data }) => (
   <Layout lightsOn={false}>
     <div className="text-gray-500">
       <SEO title="Sound Design Portfolio" />
-      <Introduction data={data} />
-      <Showcases projects={data.showcases.edges} />
+      <div className="lg:px-8 xl:px-20 mx-auto">
+        <Introduction data={data} />
+        <Showcases projects={data.showcases.edges} />
+      </div>
     </div>
   </Layout>
 )
