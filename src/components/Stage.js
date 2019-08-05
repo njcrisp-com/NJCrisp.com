@@ -15,7 +15,7 @@ import Footer from "./footer"
 import "./style.css"
 import { css, jsx } from "@emotion/core"
 
-const Layout = ({ lightsOn, children }) => {
+const Stage = ({ lightsOn, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,7 +31,7 @@ const Layout = ({ lightsOn, children }) => {
 
   return (
     <div
-      id="layout"
+      id="Stage"
       className={`w-full h-full ${backgroundColor}`}
       css={css`
         transition: background-color 2s ease-in-out;
@@ -57,13 +57,13 @@ const Layout = ({ lightsOn, children }) => {
   )
 }
 
-Layout.propTypes = {
+Stage.propTypes = {
   children: PropTypes.node.isRequired,
   lightsOn: PropTypes.boolean,
 }
 
-Layout.defaultProps = {
+Stage.defaultProps = {
   lightsOn: true,
 }
 
-export default Layout
+export default Stage
