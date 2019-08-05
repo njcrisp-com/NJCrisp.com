@@ -47,76 +47,87 @@ const ContactForm = ({
   isSubmitting,
   isValid,
   /* and other goodies */
-}) => (
-  <Form className="leading-loose w-full max-w-screen md:max-w-4xl lg:max-w-5xl mt-6 md:mt-8 mr-4 mb-4">
-    <div className="mb-2">
-      <label
-        className="block text-base uppercase tracking-wide text-gray-600"
-        htmlFor="name"
-      >
-        Name
-      </label>
-      <Field
-        className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-        name="name"
-        type="text"
-        required
-        placeholder="Your Name"
-        aria-label="Name"
-      />
-      <ErrorMessage component={errorMessage} name="name" />
-    </div>
-    <div className="mt-2">
-      <label
-        className="block text-base uppercase tracking-wide text-gray-600"
-        htmlFor="email"
-      >
-        Email
-      </label>
-      <Field
-        className="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded"
-        name="email"
-        type="email"
-        required
-        placeholder="Your Email"
-        aria-label="Email"
-      />
-      <ErrorMessage component={errorMessage} name="email" />
-    </div>
-    <div className="mt-2">
-      <label
-        className="block text-base uppercase tracking-wide text-gray-600"
-        htmlFor="message"
-      >
-        Message
-      </label>
-      <Field
-        component="textarea"
-        rows="3"
-        className="w-full px-5 py-4 text-gray-700 bg-gray-200 rounded"
-        name="message"
-        required
-        placeholder="What's up?"
-        aria-label="Message"
-      />
-      <ErrorMessage component={errorMessage} name="message" />
-    </div>
+}) => {
+  const submitButtonText = isValid && isSubmitting ? "Submitting..." : "Submit"
+  return (
+    <Form className="leading-loose w-full max-w-screen md:max-w-4xl lg:max-w-5xl mt-6 md:mt-8 mr-4 mb-4">
+      <div className="mb-2">
+        <label
+          className="block text-base uppercase tracking-wide text-gray-600"
+          htmlFor="name"
+        >
+          Name
+        </label>
+        <Field
+          className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+          name="name"
+          type="text"
+          required
+          placeholder="Your Name"
+          aria-label="Name"
+        />
+        <ErrorMessage component={errorMessage} name="name" />
+      </div>
+      <div className="mt-2">
+        <label
+          className="block text-base uppercase tracking-wide text-gray-600"
+          htmlFor="email"
+        >
+          Email
+        </label>
+        <Field
+          className="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded"
+          name="email"
+          type="email"
+          required
+          placeholder="Your Email"
+          aria-label="Email"
+        />
+        <ErrorMessage component={errorMessage} name="email" />
+      </div>
+      <div className="mt-2">
+        <label
+          className="block text-base uppercase tracking-wide text-gray-600"
+          htmlFor="message"
+        >
+          Message
+        </label>
+        <Field
+          component="textarea"
+          rows="3"
+          className="w-full px-5 py-4 text-gray-700 bg-gray-200 rounded"
+          name="message"
+          required
+          placeholder="What's up?"
+          aria-label="Message"
+        />
+        <ErrorMessage component={errorMessage} name="message" />
+      </div>
 
-    <div className="mt-4">
-      <button
-        className={`w-full px-4 py-4 text-lg text-white font-bold tracking-wide uppercase rounded ${
-          isValid ? "bg-green-700 hover:bg-green-500" : "bg-gray-500"
-        }`}
-        type="submit"
-        css={css`
-          transition: background-color 0.333s ease-in-out;
+      <div className="mt-4">
+        <button
+          className={`w-full px-4 py-4 text-lg text-white font-bold tracking-wide uppercase rounded ${
+            !isValid ? "bg-gray-500 cursor-not-allowed" : ""
+          }
+          ${isValid && !isSubmitting ? "bg-green-700 hover:bg-green-500" : ""}
+
+          ${
+            isValid && isSubmitting
+              ? "bg-yellow-700 cursor-wait pointer-events-none"
+              : ""
+          }
         `}
-      >
-        Submit
-      </button>
-    </div>
-  </Form>
-)
+          type="submit"
+          css={css`
+            transition: background-color 0.333s ease-in-out;
+          `}
+        >
+          {submitButtonText}
+        </button>
+      </div>
+    </Form>
+  )
+}
 
 function validateForm({ email, name, message }) {
   let errors = {}
