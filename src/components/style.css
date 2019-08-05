@@ -20,15 +20,32 @@ h6 {
   @apply mt-6 mb-2;
 }
 
+.content ul,
+ol {
+  @apply list-outside mx-4 my-3;
+}
+
 .content ul {
-  @apply list-disc list-inside my-3 px-3;
+  @apply list-disc;
+}
+
+.content ol {
+  @apply list-decimal;
 }
 
 .content li p {
-  display: inline-block;
+  @apply inline p-0 m-0;
 }
 
-h1 {
+.content ol li p {
+  @apply pl-2;
+}
+
+.content p {
+  @apply mb-3;
+}
+
+.content h1 {
   @apply text-3xl;
 }
 h2 {
