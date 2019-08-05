@@ -1,5 +1,5 @@
 //src/layouts/index.js
-
+/** @jsx jsx */
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
@@ -7,6 +7,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import Transition from "../components/transition"
 import "../components/style.css"
+import { css, jsx } from "@emotion/core"
 
 const Layout = ({ children, location }) => {
   const lightsOn = location.pathname !== "/portfolio"
@@ -26,7 +27,12 @@ const Layout = ({ children, location }) => {
         }
       `}
       render={data => (
-        <div className={`w-full h-full ${backgroundColor}`}>
+        <div
+          className={`w-full h-full ${backgroundColor}`}
+          css={css`
+            transition: background-color 0.25s ease-in-out;
+          `}
+        >
           <div
             id="container"
             className="font-sans tracking-tighter px-4 md:px-8 flex flex-col justify-between min-h-screen"
