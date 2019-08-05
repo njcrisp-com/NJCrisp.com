@@ -8,9 +8,10 @@ import Footer from "../components/footer"
 import Transition from "../components/transition"
 import "../components/style.css"
 import { css, jsx } from "@emotion/core"
+import { startsWith } from "ramda"
 
 const Layout = ({ children, location }) => {
-  const lightsOn = location.pathname !== "/portfolio"
+  const lightsOn = !startsWith("/portfolio")(location.pathname)
 
   const backgroundColor = lightsOn ? "bg-white" : "bg-darkgray"
   const textColor = lightsOn ? "" : "text-gray-300"
