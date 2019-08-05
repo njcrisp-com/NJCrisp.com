@@ -6,7 +6,7 @@ const Introduction = ({ data, lightsOn }) => {
 
   return (
     <div
-      className={`mb-8 md:mb-24 max-w-4xl lg:max-w-5xl md:text-lg lg:text-xl xl:text-2xl text-center md:text-left mx-auto md:mx-0 ${textColor} lg:mt-8`}
+      className={`content px-4 md:px-0 mb-8 md:mb-24 max-w-4xl lg:max-w-5xl md:text-lg lg:text-xl xl:text-2xl text-center md:text-left mx-auto md:mx-0 ${textColor} lg:mt-8`}
     >
       {documentToReactComponents(data.page.text.json)}
     </div>

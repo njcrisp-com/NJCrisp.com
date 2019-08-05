@@ -37,7 +37,7 @@ const Footer = ({ lightsOn }) => {
               top: 1px;
             `}
           />{" "}
-          <span class="font-bold text-sm align-middle inline-block">
+          <span className="font-bold text-sm align-middle inline-block">
             {new Date().getFullYear()}
           </span>
           <strong className="block text-base tracking-tightest">
