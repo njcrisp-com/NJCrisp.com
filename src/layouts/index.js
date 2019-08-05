@@ -9,7 +9,7 @@ import Transition from "../components/transition"
 import "../components/style.css"
 
 const Layout = ({ children, location }) => {
-  const lightsOn = true
+  const lightsOn = location.pathname !== "/portfolio"
 
   const backgroundColor = lightsOn ? "bg-white" : "bg-darkgray"
   const textColor = lightsOn ? "" : "text-gray-300"
