@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -5,6 +6,7 @@ import SEO from "../components/seo"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import Introduction from "../components/introduction"
 import { contains } from "ramda"
+import { css, jsx } from "@emotion/core"
 
 export const query = graphql`
   query ContactQuery {
@@ -43,6 +45,7 @@ const ContactForm = ({
   handleBlur,
   handleSubmit,
   isSubmitting,
+  isValid,
   /* and other goodies */
 }) => (
   <Form className="leading-loose w-full max-w-screen md:max-w-4xl lg:max-w-5xl mt-6 md:mt-8 mr-4 mb-4">
@@ -101,8 +104,13 @@ const ContactForm = ({
 
     <div className="mt-4">
       <button
-        className="w-full px-4 py-4 text-lg text-white font-bold tracking-wide uppercase bg-green-700 hover:bg-green-500 rounded"
+        className={`w-full px-4 py-4 text-lg text-white font-bold tracking-wide uppercase rounded ${
+          isValid ? "bg-green-700 hover:bg-green-500" : "bg-gray-500"
+        }`}
         type="submit"
+        css={css`
+          transition: background-color 0.333s ease-in-out;
+        `}
       >
         Submit
       </button>
