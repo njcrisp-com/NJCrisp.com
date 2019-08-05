@@ -4,7 +4,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import css from "@emotion/css"
@@ -88,7 +87,7 @@ const AboutText = ({ data }) => {
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
+    <>
       <SEO title="Home/About" />
       <section id="about-wrapper">
         <div className="w-full max-w-screen m-auto h-full flex flex-wrap py-0 md:py-6 lg:py-20">
@@ -96,7 +95,7 @@ const IndexPage = ({ data }) => {
           <AboutText data={data.page.text.json} />
         </div>
       </section>
-    </Layout>
+    </>
   )
 }
 

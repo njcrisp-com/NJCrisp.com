@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import { map } from "rambda"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -59,7 +58,7 @@ const Showcases = ({ projects }) => (
 )
 
 const Portfolio = ({ data }) => (
-  <Layout lightsOn={false}>
+  <>
     <div className="text-gray-500">
       <SEO title="Sound Design Portfolio" />
       <div className="lg:px-8 xl:px-20 mx-auto">
@@ -67,7 +66,7 @@ const Portfolio = ({ data }) => (
         <Showcases projects={data.showcases.edges} />
       </div>
     </div>
-  </Layout>
+  </>
 )
 
 export const query = graphql`

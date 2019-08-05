@@ -20,6 +20,7 @@
     "gatsby": "^2.13.39",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-layout": "^1.1.2",
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-postcss": "^2.1.2",
@@ -36,6 +37,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-plyr": "^2.2.0",
+    "react-transition-group": "^4.2.2",
     "tailwindcss": "^1.0.5"
   },
   "devDependencies": {
