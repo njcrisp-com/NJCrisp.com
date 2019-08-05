@@ -29,32 +29,7 @@ const Stage = ({ lightsOn, children }) => {
   const backgroundColor = lightsOn ? "bg-white" : "bg-darkgray"
   const textColor = lightsOn ? "" : "text-gray-300"
 
-  return (
-    <div
-      id="Stage"
-      className={`w-full h-full ${backgroundColor}`}
-      css={css`
-        transition: background-color 2s ease-in-out;
-      `}
-    >
-      <div
-        id="container"
-        className="font-sans tracking-tighter px-4 md:px-8 flex flex-col justify-between min-h-screen"
-      >
-        <Header lightsOn={lightsOn} siteTitle={data.site.siteMetadata.title} />
-        <div
-          id="main"
-          className={`pt-2 md:pt-8 lg:pt-12 xl:pt-16 md:px-8 ${textColor} flex-auto flex-grow`}
-        >
-          <main>{children}</main>
-        </div>
-
-        <div className="flex-1 flex justify-end flex-col">
-          <Footer lightsOn={lightsOn} />
-        </div>
-      </div>
-    </div>
-  )
+  return <>{children}</>
 }
 
 Stage.propTypes = {
