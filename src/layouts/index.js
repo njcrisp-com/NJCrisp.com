@@ -6,6 +6,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import Transition from "../components/transition"
+import "../components/style.css"
 
 const Layout = ({ children, location }) => {
   const lightsOn = true

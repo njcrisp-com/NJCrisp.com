@@ -3,7 +3,6 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Stage from "../components/Stage"
 import SEO from "../components/seo"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Introduction from "../components/introduction"
@@ -70,13 +69,13 @@ const ToolList = ({ tools }) => {
 }
 
 const ToolsPage = ({ data }) => (
-  <Stage>
+  <>
     <SEO title="Tools" />
     <div className="lg:px-8 xl:px-20">
       <Introduction lightsOn data={data} />
       <ToolList tools={data.tools} />
     </div>
-  </Stage>
+  </>
 )
 
 export default ToolsPage

@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import Stage from "../components/Stage"
 import SEO from "../components/seo"
 import Introduction from "../components/introduction"
 
@@ -83,13 +82,13 @@ const ContactForm = () => (
 )
 
 const ContactPage = ({ data }) => (
-  <Stage>
+  <>
     <SEO title="Contact" />
     <div className="lg:px-8 xl:px-20">
       <Introduction lightsOn data={data} />
       <ContactForm />
     </div>
-  </Stage>
+  </>
 )
 
 export default ContactPage
