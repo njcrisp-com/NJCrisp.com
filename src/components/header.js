@@ -67,7 +67,7 @@ const Header = ({ siteTitle, lightsOn }) => {
         <h1 className="capitalized text-4xl font-bold leading-none">
           <Link to="/" exact>
             <div className="flex content-start">
-              <div className="flex flex-shrink self-start w-20 mr-2">
+              <div className="flex flex-shrink self-start w-20 mx-2">
                 <img
                   src={data.Emblem.publicURL}
                   alt="NJCrisp.com Emblem"

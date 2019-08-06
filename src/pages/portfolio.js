@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core"
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { map } from "rambda"
@@ -17,7 +19,12 @@ import Zoom from "react-reveal/Zoom"
 const Showcase = ({ project }) => {
   console.log(project)
   return (
-    <section className="block pb-4 mb-8 md:mb-20 xs:min-h-screen md:min-h-0">
+    <section
+      className="block pb-4 mb-8 md:mb-20 xs:min-h-screen md:min-h-0"
+      css={css`
+        scroll-snap-align: start;
+      `}
+    >
       <Fade delay={100} bottom>
         <h2 className="text-white">
           <span className="text-gray-500 uppercase sm:text-base md:text-xl sm:text-sm font-bold">
@@ -56,7 +63,12 @@ const Showcase = ({ project }) => {
 }
 
 const Showcases = ({ projects }) => (
-  <div>
+  <div
+    css={css`
+      scroll-snap-type: y proximity;
+      scroll-padding-top: 15vh;
+    `}
+  >
     {map(project => (
       <div key={project.node.id}>
         <Showcase project={project.node} />
