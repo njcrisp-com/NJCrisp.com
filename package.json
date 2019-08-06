@@ -41,6 +41,7 @@
     "react-helmet": "^5.2.1",
     "react-plyr": "^2.2.0",
     "react-recaptcha": "^2.3.10",
+    "react-reveal": "^1.2.2",
     "react-transition-group": "^4.2.2",
     "tailwindcss": "^1.0.5",
     "yup": "^0.27.0"
