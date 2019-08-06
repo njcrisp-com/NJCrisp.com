@@ -14,6 +14,8 @@ import { format } from "date-fns"
 
 import Captcha from "../components/captcha"
 
+import Zoom from "react-reveal/Zoom"
+
 export const query = graphql`
   query ContactQuery {
     page: contentfulPage(label: { eq: "Contact" }) {
@@ -194,7 +196,9 @@ const ContactPage = ({ data }) => (
     <SEO title="Contact" />
     <div className="lg:px-8 xl:px-20">
       <Introduction lightsOn data={data} />
-      <ContactForm />
+      <Zoom>
+        <ContactForm />
+      </Zoom>
     </div>
   </>
 )
