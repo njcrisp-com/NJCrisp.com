@@ -7,6 +7,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import Introduction from "../components/introduction"
 import { contains } from "ramda"
 import { css, jsx } from "@emotion/core"
+import * as emailjs from "emailjs-com"
+import contactValidationSchema from "../contactValidationSchema"
 
 export const query = graphql`
   query ContactQuery {
@@ -20,6 +22,14 @@ export const query = graphql`
     }
   }
 `
+
+async function sendEmail(values) {
+  return emailjs.send(
+    "default_service",
+    "contact",
+    "user_IlrblBSFJVzYxWfhDXKOa"
+  )
+}
 
 const submitForm = (values, { setSubmitting }) => {
   console.log("submitting form")
@@ -46,69 +56,75 @@ const ContactForm = ({
   handleSubmit,
   isSubmitting,
   isValid,
+
   /* and other goodies */
 }) => {
   const submitButtonText = isValid && isSubmitting ? "Submitting..." : "Submit"
   return (
-    <Form className="leading-loose w-full max-w-screen md:max-w-4xl lg:max-w-5xl mt-6 md:mt-8 mr-4 mb-4">
-      <div className="mb-2">
-        <label
-          className="block text-base uppercase tracking-wide text-gray-600"
-          htmlFor="name"
-        >
-          Name
-        </label>
-        <Field
-          className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-          name="name"
-          type="text"
-          required
-          placeholder="Your Name"
-          aria-label="Name"
-        />
-        <ErrorMessage component={errorMessage} name="name" />
-      </div>
-      <div className="mt-2">
-        <label
-          className="block text-base uppercase tracking-wide text-gray-600"
-          htmlFor="email"
-        >
-          Email
-        </label>
-        <Field
-          className="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded"
-          name="email"
-          type="email"
-          required
-          placeholder="Your Email"
-          aria-label="Email"
-        />
-        <ErrorMessage component={errorMessage} name="email" />
-      </div>
-      <div className="mt-2">
-        <label
-          className="block text-base uppercase tracking-wide text-gray-600"
-          htmlFor="message"
-        >
-          Message
-        </label>
-        <Field
-          component="textarea"
-          rows="3"
-          className="w-full px-5 py-4 text-gray-700 bg-gray-200 rounded"
-          name="message"
-          required
-          placeholder="What's up?"
-          aria-label="Message"
-        />
-        <ErrorMessage component={errorMessage} name="message" />
-      </div>
+    <Formik
+      initialValues={{ email: "", name: "", message: "" }}
+      onSubmit={submitForm}
+      validationSchema={contactValidationSchema}
+    >
+      <Form className="leading-loose w-full max-w-screen md:max-w-4xl lg:max-w-5xl mt-6 md:mt-8 mr-4 mb-4">
+        <div className="mb-2">
+          <label
+            className="block text-base uppercase tracking-wide text-gray-600"
+            htmlFor="name"
+          >
+            Name
+          </label>
+          <Field
+            className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+            name="name"
+            type="text"
+            required
+            placeholder="Your Name"
+            aria-label="Name"
+          />
+          <ErrorMessage component={errorMessage} name="name" />
+        </div>
+        <div className="mt-2">
+          <label
+            className="block text-base uppercase tracking-wide text-gray-600"
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <Field
+            className="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded"
+            name="email"
+            type="email"
+            required
+            placeholder="Your Email"
+            aria-label="Email"
+          />
+          <ErrorMessage component={errorMessage} name="email" />
+        </div>
+        <div className="mt-2">
+          <label
+            className="block text-base uppercase tracking-wide text-gray-600"
+            htmlFor="message"
+          >
+            Message
+          </label>
+          <Field
+            component="textarea"
+            rows="3"
+            className="w-full px-5 py-4 text-gray-700 bg-gray-200 rounded"
+            name="message"
+            required
+            placeholder="What's up?"
+            aria-label="Message"
+          />
+          <ErrorMessage component={errorMessage} name="message" />
+        </div>
 
-      <div className="mt-4">
-        <button
-          className={`w-full px-4 py-4 text-lg text-white font-bold tracking-wide uppercase rounded ${
-            !isValid ? "bg-gray-500 cursor-not-allowed" : ""
-          }
+        <div className="mt-4">
+          <button
+            className={`w-full px-4 py-4 text-lg text-white font-bold tracking-wide uppercase rounded ${
+              !isValid ? "bg-gray-500 cursor-not-allowed" : ""
+            }
           ${isValid && !isSubmitting ? "bg-green-700 hover:bg-green-500" : ""}
 
           ${
@@ -117,57 +133,25 @@ const ContactForm = ({
               : ""
           }
         `}
-          type="submit"
-          css={css`
-            transition: background-color 0.333s ease-in-out;
-          `}
-        >
-          {submitButtonText}
-        </button>
-      </div>
-    </Form>
+            type="submit"
+            css={css`
+              transition: background-color 0.333s ease-in-out;
+            `}
+          >
+            {submitButtonText}
+          </button>
+        </div>
+      </Form>
+    </Formik>
   )
 }
-
-function validateForm({ email, name, message }) {
-  let errors = {}
-
-  if (!email) {
-    errors.email = "Please enter your email address"
-  }
-
-  if (email.length < 5 || !(contains("@")(email) && contains(".")(email))) {
-    errors.email = "Please enter a valid email address"
-  }
-
-  if (!name || name.length < 3) {
-    errors.name = "Please enter your name"
-  }
-
-  if (!message) {
-    errors.message = "Please enter a message"
-  }
-
-  console.log("validating form")
-  return errors
-}
-
-const ContactFormik = () => (
-  <Formik
-    initialValues={{ email: "", name: "", message: "" }}
-    onSubmit={submitForm}
-    validate={validateForm}
-  >
-    {props => <ContactForm {...props} />}
-  </Formik>
-)
 
 const ContactPage = ({ data }) => (
   <>
     <SEO title="Contact" />
     <div className="lg:px-8 xl:px-20">
       <Introduction lightsOn data={data} />
-      <ContactFormik />
+      <ContactForm />
     </div>
   </>
 )
