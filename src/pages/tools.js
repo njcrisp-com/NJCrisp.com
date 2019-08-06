@@ -8,7 +8,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Introduction from "../components/introduction"
 import { map } from "rambda"
 import { css, jsx } from "@emotion/core"
-
+import Zoom from "react-reveal/Zoom"
 import { Img } from "gatsby-image"
 
 export const query = graphql`
@@ -72,8 +72,10 @@ const ToolsPage = ({ data }) => (
   <>
     <SEO title="Tools" />
     <div className="lg:px-8 xl:px-20">
-      <Introduction lightsOn data={data} />
-      <ToolList tools={data.tools} />
+      <Zoom>
+        <Introduction lightsOn data={data} />
+        <ToolList tools={data.tools} />
+      </Zoom>
     </div>
   </>
 )
