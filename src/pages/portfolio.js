@@ -11,40 +11,43 @@ const Player = loadable(() => import("../components/player"))
 import PageTitle from "../components/page-title"
 import { format } from "date-fns"
 import Introduction from "../components/introduction"
+import Fade from "react-reveal/Fade"
 
 const Showcase = ({ project }) => {
   console.log(project)
   return (
     <section className="block pb-4 mb-8 md:mb-20 xs:min-h-screen md:min-h-0">
-      <h2 className="text-white">
-        <span className="text-gray-500 uppercase sm:text-base md:text-xl sm:text-sm font-bold">
-          {project.category ? `${project.category.categoryName}: ` : ""}
-        </span>
+      <Fade>
+        <h2 className="text-white">
+          <span className="text-gray-500 uppercase sm:text-base md:text-xl sm:text-sm font-bold">
+            {project.category ? `${project.category.categoryName}: ` : ""}
+          </span>
+          <span
+            className="uppercase text-4xl md:text-5xl lg:text-6xl block leading-none font-bold relative"
+            style={{ top: "-4pt" }}
+          >
+            {project.title}
+          </span>
+        </h2>
         <span
-          className="uppercase text-4xl md:text-5xl lg:text-6xl block leading-none font-bold relative"
+          className="text-gray-500 capitalize text-base sm:text-lg md:text-xl lg: text-xl text-white relative"
           style={{ top: "-4pt" }}
         >
-          {project.title}
+          {format(project.date, `Do MMMM YYYY`)}
         </span>
-      </h2>
-      <span
-        className="text-gray-500 capitalize text-base sm:text-lg md:text-xl lg: text-xl text-white relative"
-        style={{ top: "-4pt" }}
-      >
-        {format(project.date, `Do MMMM YYYY`)}
-      </span>
-      <Player videoId={project.vimeoID} />
-      <p className="text container text-lg mt-8 content">
-        {documentToReactComponents(project.description.json)}
-      </p>
-      <div className="px-1">
-        <h3 className="text-xl text-gray-100 font-bold mt-4">Tools Used:</h3>
-        <ul className="text-m list-disc list-inside">
-          {map(({ name }) => (
-            <li className="text-lg lg:text-xl xl:text-2xl">{name}</li>
-          ))(project.toolsUsed)}
-        </ul>
-      </div>
+        <Player videoId={project.vimeoID} />
+        <p className="text container text-lg mt-8 content">
+          {documentToReactComponents(project.description.json)}
+        </p>
+        <div className="px-1">
+          <h3 className="text-xl text-gray-100 font-bold mt-4">Tools Used:</h3>
+          <ul className="text-m list-disc list-inside">
+            {map(({ name }) => (
+              <li className="text-lg lg:text-xl xl:text-2xl">{name}</li>
+            ))(project.toolsUsed)}
+          </ul>
+        </div>
+      </Fade>
     </section>
   )
 }

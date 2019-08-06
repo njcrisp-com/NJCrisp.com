@@ -2,7 +2,7 @@
   "name": "njcrisp.com",
   "private": true,
   "description": "Sound Design and Audio Production Portfolio for Natan James Crisp",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "author": "Rai Butera <rai@rstlss.org>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
@@ -21,6 +21,7 @@
     "formik": "^1.5.8",
     "gatsby": "^2.13.39",
     "gatsby-image": "^2.2.6",
+    "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-layout": "^1.1.2",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -41,6 +42,7 @@
     "react-helmet": "^5.2.1",
     "react-plyr": "^2.2.0",
     "react-recaptcha": "^2.3.10",
+    "react-reveal": "^1.2.2",
     "react-transition-group": "^4.2.2",
     "tailwindcss": "^1.0.5",
     "yup": "^0.27.0"
