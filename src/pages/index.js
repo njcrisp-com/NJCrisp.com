@@ -21,7 +21,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const SecondaryNavigation = () => (
   <section id="secondary-navigation" className="flex text-left mt-10 mr-5">
-    <Zoom>
+    <Zoom delay={500}>
       <div className="flex-grow"></div>
       <div className="flex-shrink">
         <p className="text-base text-gray-600 text-center sm:text-left pt-6">
@@ -90,7 +90,7 @@ const AboutText = ({ data }) => {
       id="about-text"
       className="w-64 flex-1 text-lg text-center lg:text-xl lg:text-left mx-4 lg:mx-12 xl:mx-20 lg:mt-0 mt-6 self-center max-w-6xl"
     >
-      <Zoom>
+      <Zoom delay={250}>
         <div className="content md:text-xl lg:text-2xl px-4 ">
           {documentToReactComponents(data)}
         </div>

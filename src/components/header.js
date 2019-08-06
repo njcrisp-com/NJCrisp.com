@@ -72,6 +72,13 @@ const Header = ({ siteTitle, lightsOn }) => {
                   src={data.Emblem.publicURL}
                   alt="NJCrisp.com Emblem"
                   className="h-auto w-full"
+                  css={
+                    lightsOn
+                      ? ""
+                      : css`
+                          filter: invert(1);
+                        `
+                  }
                 />
               </div>
               <div className="">
