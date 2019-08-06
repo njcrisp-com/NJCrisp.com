@@ -12,12 +12,13 @@ import PageTitle from "../components/page-title"
 import { format } from "date-fns"
 import Introduction from "../components/introduction"
 import Fade from "react-reveal/Fade"
+import Zoom from "react-reveal/Zoom"
 
 const Showcase = ({ project }) => {
   console.log(project)
   return (
     <section className="block pb-4 mb-8 md:mb-20 xs:min-h-screen md:min-h-0">
-      <Fade>
+      <Fade delay={100} bottom>
         <h2 className="text-white">
           <span className="text-gray-500 uppercase sm:text-base md:text-xl sm:text-sm font-bold">
             {project.category ? `${project.category.categoryName}: ` : ""}
@@ -29,12 +30,14 @@ const Showcase = ({ project }) => {
             {project.title}
           </span>
         </h2>
-        <span
-          className="text-gray-500 capitalize text-base sm:text-lg md:text-xl lg: text-xl text-white relative"
-          style={{ top: "-4pt" }}
-        >
-          {format(project.date, `Do MMMM YYYY`)}
-        </span>
+        <Fade>
+          <span
+            className="text-gray-500 capitalize text-base sm:text-lg md:text-xl lg: text-xl text-white relative"
+            style={{ top: "-4pt" }}
+          >
+            {format(project.date, `Do MMMM YYYY`)}
+          </span>
+        </Fade>
         <Player videoId={project.vimeoID} />
         <p className="text container text-lg mt-8 content">
           {documentToReactComponents(project.description.json)}
@@ -54,9 +57,11 @@ const Showcase = ({ project }) => {
 
 const Showcases = ({ projects }) => (
   <div>
-    {map(project => <Showcase project={project.node} key={project.node.id} />)(
-      projects
-    )}
+    {map(project => (
+      <div key={project.node.id}>
+        <Showcase project={project.node} />
+      </div>
+    ))(projects)}
   </div>
 )
 

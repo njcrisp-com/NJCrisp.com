@@ -2,7 +2,7 @@
   "name": "njcrisp.com",
   "private": true,
   "description": "Sound Design and Audio Production Portfolio for Natan James Crisp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Rai Butera <rai@rstlss.org>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",

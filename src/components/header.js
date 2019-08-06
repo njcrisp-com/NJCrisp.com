@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { css, jsx } from "@emotion/core"
@@ -50,37 +50,63 @@ const Navbar = ({ activeLinkColor, linkColor }) => {
 }
 
 const Header = ({ siteTitle, lightsOn }) => {
+  const data = useStaticQuery(graphql`
+    {
+      Emblem: file(relativePath: { eq: "logo/emblem.svg" }) {
+        publicURL
+      }
+    }
+  `)
   const activeLinkColor = lightsOn ? "text-gray-900" : "text-gray-100"
   const linkColor = lightsOn ? "text-gray-600" : "text-gray-600"
   const textColor = lightsOn ? "" : "text-white"
 
   return (
-    <header className={`mb-2 w-full pt-4 md:pt-8 ${textColor}`}>
+    <header className={`mb-2 w-full pt-6 md:pt-12 ${textColor}`}>
       <div>
         <h1 className="capitalized text-4xl font-bold leading-none">
           <Link to="/" exact>
-            <span
-              className="relative block leading-none m-0 tracking-tighter"
-              css={css``}
-            >
-              Natan
-            </span>
-            <span
-              className="relative block leading-none m-0 tracking-tighter"
-              css={css`
-                top: -0.2em;
-              `}
-            >
-              James
-            </span>
-            <span
-              className="relative block leading-none m-0 tracking-tighter"
-              css={css`
-                top: -0.4em;
-              `}
-            >
-              Crisp
-            </span>
+            <div className="flex content-start">
+              <div className="flex flex-shrink self-start w-20 mr-2">
+                <img
+                  src={data.Emblem.publicURL}
+                  alt="NJCrisp.com Emblem"
+                  className="h-auto w-full"
+                  css={
+                    lightsOn
+                      ? ""
+                      : css`
+                          filter: invert(1);
+                        `
+                  }
+                />
+              </div>
+              <div className="">
+                <span
+                  className="relative block leading-none m-0 tracking-tighter"
+                  css={css``}
+                >
+                  Natan
+                </span>
+                <span
+                  className="relative block leading-none m-0 tracking-tighter"
+                  css={css`
+                    top: -0.2em;
+                  `}
+                >
+                  James
+                </span>
+                <span
+                  className="relative block leading-none m-0 tracking-tighter"
+                  css={css`
+                    top: -0.4em;
+                  `}
+                >
+                  Crisp
+                </span>
+              </div>
+              <div className="flex-grow pointer-events-none" />
+            </div>
           </Link>
         </h1>
         <p

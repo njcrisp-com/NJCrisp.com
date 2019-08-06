@@ -14,7 +14,7 @@ import { format } from "date-fns"
 
 import Captcha from "../components/captcha"
 
-import Zoom from "react-reveal/Zoom"
+import Fade from "react-reveal/Fade"
 
 export const query = graphql`
   query ContactQuery {
@@ -196,9 +196,9 @@ const ContactPage = ({ data }) => (
     <SEO title="Contact" />
     <div className="lg:px-8 xl:px-20">
       <Introduction lightsOn data={data} />
-      <Zoom>
+      <Fade top delay={500}>
         <ContactForm />
-      </Zoom>
+      </Fade>
     </div>
   </>
 )
