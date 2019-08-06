@@ -51,11 +51,12 @@ const errorMessage = ({ children }) => {
 }
 
 const ContactForm = ({}) => {
-  const [finished, setFinished] = useState(0)
-  const [human, setHuman] = useState(1)
+  const [finished, setFinished] = useState(false)
+  const [human, setHuman] = useState(false)
 
   const onChange = args => {
     console.log("reCaptcha onChange:", args)
+    setHuman(true)
   }
 
   if (!finished) {
