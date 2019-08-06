@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="1280px" viewBox="0 0 1280 1280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>emblem</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="85" y="79" width="1181" height="1181" rx="51"></rect>
+        <filter x="-0.6%" y="-0.4%" width="101.2%" height="101.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="24.7697925%" y1="8.78757409%" x2="104.65707%" y2="104.40834%" id="linearGradient-3">
+            <stop stop-color="#333333" offset="0%"></stop>
+            <stop stop-color="#323232" offset="0%"></stop>
+            <stop stop-color="#313131" offset="8.83734027%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-4" x="52" y="49" width="1181" height="1181" rx="51"></rect>
+        <filter x="-0.6%" y="-0.4%" width="101.2%" height="101.2%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="0%" y1="23.5960532%" x2="100%" y2="76.4039468%" id="linearGradient-6">
+            <stop stop-color="#81FFEF" offset="0%"></stop>
+            <stop stop-color="#F067B4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="emblem" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+            <use fill="url(#linearGradient-3)" fill-rule="evenodd" xlink:href="#path-4"></use>
+        </g>
+        <g id="emblem-body-color" transform="translate(189.000000, 426.000000)" fill="url(#linearGradient-6)">
+            <g id="emblem-body">
+                <path d="M600.818557,523.828833 C597.972492,527.41576 594.965253,530.83163 591.796837,534.076446 C564.114151,562.491079 526.051029,576.698182 477.606329,576.698182 C440.844654,576.698182 404.747582,569.8529 369.314492,556.162179 L369.314492,584.014257 L286.166764,584.014257 L81.7619326,252.733937 L81.7619326,584.014257 L-1.13686838e-13,584.014257 L-1.13686838e-13,132.331636 L89.3838077,132.331636 L287.55256,452.476483 L287.55256,132.331636 L369.314492,132.331636 L369.314492,455.37781 C401.888402,469.571041 433.660105,476.667577 464.630135,476.667577 C489.429208,476.667577 507.45152,469.419055 518.697611,454.921794 C529.943702,440.424532 535.566663,418.389025 535.566663,388.814611 L535.566663,0 L638.511136,0 L638.511136,314.118644 C642.707553,308.017277 647.224588,302.201006 652.062241,296.669835 C687.173373,256.7952 733.371537,236.858182 790.65812,236.858182 C818.377434,236.858182 842.40048,240.219656 862.727977,246.942705 C883.055474,253.665754 900.610777,263.054698 915.394411,275.10982 C944.499691,298.756406 963.440938,331.907494 972.218721,374.56408 L884.903318,390.56022 C877.5115,366.913634 866.077455,347.788006 850.600838,333.182762 C835.12422,318.577518 815.836487,311.275006 792.737058,311.275006 C761.321835,311.275006 735.912845,324.489076 716.509325,350.917613 C695.719839,379.664442 685.325252,419.422566 685.325252,470.193176 C685.325252,520.963786 694.564885,560.605997 713.044428,589.120997 C731.523971,617.635998 756.70197,631.893284 788.579182,631.893284 C820.456393,631.893284 844.479439,624.12712 860.649039,608.594559 C876.818639,593.061998 884.903318,573.009066 884.903318,548.435164 L972.911701,548.435164 C972.911701,598.973945 956.857839,638.036591 924.749633,665.624274 C892.641427,693.211957 848.637675,707.005592 792.737058,707.005592 C733.140532,707.005592 685.787414,686.141271 650.676282,644.412002 C624.216065,612.682918 607.596897,572.488767 600.818557,523.828833 Z" id="Combined-Shape" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
