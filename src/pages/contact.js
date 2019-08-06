@@ -8,8 +8,11 @@ import Introduction from "../components/introduction"
 import { contains } from "ramda"
 import { css, jsx } from "@emotion/core"
 import * as emailjs from "emailjs-com"
+
 import contactValidationSchema from "../contactValidationSchema"
 import { format } from "date-fns"
+
+import Captcha from "../components/captcha"
 
 export const query = graphql`
   query ContactQuery {
@@ -49,6 +52,11 @@ const errorMessage = ({ children }) => {
 
 const ContactForm = ({}) => {
   const [finished, setFinished] = useState(0)
+  const [human, setHuman] = useState(1)
+
+  const onChange = args => {
+    console.log("reCaptcha onChange:", args)
+  }
 
   if (!finished) {
     return (
@@ -56,15 +64,19 @@ const ContactForm = ({}) => {
         initialValues={{ email: "", name: "", message: "" }}
         onSubmit={(values, { setSubmitting }) => {
           console.log("submitting form")
-          sendEmail(values).then(
-            success => {
-              setSubmitting(false)
-              setFinished(true)
-            },
-            error => {
-              alert("Error!", error)
-            }
-          )
+          if (human) {
+            sendEmail(values).then(
+              success => {
+                setSubmitting(false)
+                setFinished(true)
+              },
+              error => {
+                alert("Error!", error)
+              }
+            )
+          } else {
+            alert("Please fill out captcha to verify you are a human.")
+          }
         }}
         validationSchema={contactValidationSchema}
         render={({
@@ -133,7 +145,9 @@ const ContactForm = ({}) => {
                 />
                 <ErrorMessage component={errorMessage} name="message" />
               </div>
-
+              <div className="my-2">
+                <Captcha onChange={onChange} />
+              </div>
               <div className="mt-4">
                 <button
                   className={`w-full px-4 py-4 text-lg text-white font-bold tracking-wide uppercase rounded ${
