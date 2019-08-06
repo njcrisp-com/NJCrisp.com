@@ -10,6 +10,8 @@ import "../components/style.css"
 import { css, jsx } from "@emotion/core"
 import { startsWith } from "ramda"
 
+import Fade from "react-reveal/Fade"
+
 const Layout = ({ children, location }) => {
   const lightsOn = !startsWith("/portfolio")(location.pathname)
 
@@ -42,14 +44,16 @@ const Layout = ({ children, location }) => {
               lightsOn={lightsOn}
               siteTitle={data.site.siteMetadata.title}
             />
-            <div
-              id="main"
-              className={`pt-2 md:pt-8 lg:pt-12 xl:pt-16 md:px-8 ${textColor} flex-auto flex-grow`}
-            >
-              <Transition location={location}>
-                <main>{children}</main>
-              </Transition>
-            </div>
+            <Fade top delay={1000}>
+              <div
+                id="main"
+                className={`pt-2 md:pt-8 lg:pt-12 xl:pt-16 md:px-8 ${textColor} flex-auto flex-grow`}
+              >
+                <Transition location={location}>
+                  <main>{children}</main>
+                </Transition>
+              </div>
+            </Fade>
 
             <div className="flex-1 flex justify-end flex-col">
               <Footer lightsOn={lightsOn} />

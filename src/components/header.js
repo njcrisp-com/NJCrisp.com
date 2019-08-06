@@ -5,6 +5,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import { css, jsx } from "@emotion/core"
 
+import Fade from "react-reveal/Fade"
+
 const Navbar = ({ activeLinkColor, linkColor }) => {
   return (
     <nav>
@@ -68,61 +70,73 @@ const Header = ({ siteTitle, lightsOn }) => {
           <Link to="/" exact>
             <div className="flex content-start">
               <div className="flex flex-shrink self-start w-20 mx-2 mt-2">
-                <img
-                  src={data.Emblem.publicURL}
-                  alt="NJCrisp.com Emblem"
-                  className="h-auto w-full"
-                  css={
-                    lightsOn
-                      ? ""
-                      : css`
-                          filter: invert(1);
-                        `
-                  }
-                />
+                <Fade left delay={100}>
+                  <img
+                    src={data.Emblem.publicURL}
+                    alt="NJCrisp.com Emblem"
+                    className="h-auto w-full"
+                    css={
+                      lightsOn
+                        ? ""
+                        : css`
+                            filter: invert(1);
+                          `
+                    }
+                  />
+                </Fade>
               </div>
               <div className="">
-                <span
-                  className="relative block leading-none m-0 tracking-tighter"
-                  css={css``}
-                >
-                  Natan
-                </span>
-                <span
-                  className="relative block leading-none m-0 tracking-tighter"
-                  css={css`
-                    top: -0.2em;
-                  `}
-                >
-                  James
-                </span>
-                <span
-                  className="relative block leading-none m-0 tracking-tighter"
-                  css={css`
-                    top: -0.4em;
-                  `}
-                >
-                  Crisp
-                </span>
+                <Fade left delay={200}>
+                  <span
+                    className="relative block leading-none m-0 tracking-tighter"
+                    css={css``}
+                  >
+                    Natan
+                  </span>
+                </Fade>
+                <Fade left delay={300}>
+                  <span
+                    className="relative block leading-none m-0 tracking-tighter"
+                    css={css`
+                      top: -0.2em;
+                    `}
+                  >
+                    James
+                  </span>
+                </Fade>
+                <Fade left delay={400}>
+                  <span
+                    className="relative block leading-none m-0 tracking-tighter"
+                    css={css`
+                      top: -0.4em;
+                    `}
+                  >
+                    Crisp
+                  </span>
+                </Fade>
               </div>
               <div className="flex-grow pointer-events-none" />
             </div>
           </Link>
         </h1>
-        <p
-          className="leading-none m-0 tracking-tighter lowercase text-lg relative block"
-          css={css`
-            top: -0.4em;
-          `}
-        >
-          Sound Design & Audio Production
-        </p>
+        <Fade left delay={500}>
+          <p
+            className="leading-none m-0 tracking-tighter lowercase text-lg relative block"
+            css={css`
+              top: -0.4em;
+            `}
+          >
+            Sound Design & Audio Production
+          </p>
+        </Fade>
       </div>
-      <div className="mt-1">
-        <div className="w-3/4 bg-gray-400 h-1 rounded"></div>
-      </div>
+      <Fade left delay={700}>
+        <div className="mt-1">
+          <div className="w-3/4 bg-gray-400 h-1 rounded"></div>
+        </div>
 
-      <Navbar activeLinkColor={activeLinkColor} linkColor={linkColor} />
+        <Navbar activeLinkColor={activeLinkColor} linkColor={linkColor} />
+      </Fade>
     </header>
   )
 }
