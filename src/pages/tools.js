@@ -45,7 +45,7 @@ const ToolList = ({ tools }) => {
   return (
     <div className="md:pl-4 lg:pl-10 xl:pl-20">
       {map(({ node }) => (
-        <section className="mt-8 mb-16 w-full flex flex-wrap">
+        <section key={node.name} className="mt-8 mb-16 w-full flex flex-wrap">
           <div className="flex-1 flex-none mr-10 text-center md:text-right min-w-full md:min-w-0">
             <div className="w-64 mx-auto">
               <h1 className="text-4xl md:text-5xl uppercase font-bold tracking-normal">

@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 import css from "@emotion/css"
 import Img from "gatsby-image"
 import styled from "@emotion/styled"
-
+import Fade from "react-reveal/Fade"
 import {
   faFileAudio,
   faComments,
@@ -87,7 +87,7 @@ const AboutText = ({ data }) => {
 
 const IndexPage = ({ data }) => {
   return (
-    <>
+    <Fade>
       <SEO title="Home/About" />
       <section id="about-wrapper">
         <div className="w-full max-w-screen m-auto h-full flex flex-wrap py-0 md:py-6 lg:py-20">
@@ -95,7 +95,7 @@ const IndexPage = ({ data }) => {
           <AboutText data={data.page.text.json} />
         </div>
       </section>
-    </>
+    </Fade>
   )
 }
 
