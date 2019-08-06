@@ -76,7 +76,8 @@ const ContactForm = ({}) => {
               }
             )
           } else {
-            alert("Please fill out captcha to verify you are a human.")
+            alert("Please fill out ReCAPTCHA to verify you are a human")
+            setSubmitting(false)
           }
         }}
         validationSchema={contactValidationSchema}
@@ -177,8 +178,12 @@ const ContactForm = ({}) => {
     )
   } else {
     return (
-      <div className="m-6 p-2 text-center block text-lg">
-        Thank you for your message.
+      <div className="m-6 p-2 text-center block text-xl content">
+        <p>{`Thank you for your message.`}</p>
+        <p>{`I'll reply to you ASAP.`}</p>
+        <p>
+          <Link to="/">go back to the homepage</Link>
+        </p>
       </div>
     )
   }

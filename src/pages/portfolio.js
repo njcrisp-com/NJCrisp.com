@@ -33,10 +33,10 @@ const Showcase = ({ project }) => {
       >
         {format(project.date, `Do MMMM YYYY`)}
       </span>
-      <p className="text container text-lg">
+      <Player videoId={project.vimeoID} />
+      <p className="text container text-lg mt-8 content">
         {documentToReactComponents(project.description.json)}
       </p>
-      <Player videoId={project.vimeoID} />
       <div className="px-1">
         <h3 className="text-xl text-gray-100 font-bold mt-4">Tools Used:</h3>
         <ul className="text-m list-disc list-inside">
