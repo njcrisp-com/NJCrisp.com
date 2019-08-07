@@ -9,6 +9,7 @@ import Transition from "../components/transition"
 import "../components/style.css"
 import { css, jsx } from "@emotion/core"
 import { startsWith } from "ramda"
+import { Helmet } from "react-helmet"
 
 import Fade from "react-reveal/Fade"
 
@@ -31,6 +32,14 @@ const Layout = ({ children, location }) => {
               title
             }
           }
+          HomepagePhoto: file(relativePath: { eq: "natan-in-studio.jpg" }) {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 1920) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
         }
       `}
       render={data => (
@@ -40,6 +49,34 @@ const Layout = ({ children, location }) => {
             transition: background-color 0.25s ease-in-out;
           `}
         >
+          <Helmet>
+            <meta
+              name="description"
+              content="Sound Design and Audio Production Portfolio for Natan James Crisp"
+            />
+            <meta name="image" content={data.HomepagePhoto.publicURL} />
+            <meta itemProp="name" content="NJCrisp.com" />
+            <meta
+              itemProp="description"
+              content="Sound Design and Audio Production Portfolio for Natan James Crisp"
+            />
+            <meta itemProp="image" content={data.HomepagePhoto.publicURL} />
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content="NJCrisp.com" />
+            <meta
+              name="twitter:description"
+              content="Sound Design and Audio Production Portfolio for Natan James Crisp"
+            />
+            <meta name="og:title" content="NJCrisp.com" />
+            <meta
+              name="og:description"
+              content="Sound Design and Audio Production Portfolio for Natan James Crisp"
+            />
+            <meta name="og:image" content={data.HomepagePhoto.publicURL} />
+            <meta name="og:url" content="https://njcrisp.com" />
+            <meta name="og:site_name" content="NJCrisp.com" />
+            <meta name="og:type" content="website" />
+          </Helmet>
           <div
             id="container"
             className="font-sans tracking-tighter px-4 md:px-8 flex flex-col justify-between min-h-screen"
