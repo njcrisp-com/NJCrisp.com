@@ -11,6 +11,7 @@ import Img from "gatsby-image"
 import styled from "@emotion/styled"
 import Fade from "react-reveal/Fade"
 import Zoom from "react-reveal/Zoom"
+import Bounce from "react-reveal/Bounce"
 
 import {
   faFileAudio,
@@ -72,14 +73,14 @@ const SecondaryNavigation = () => (
 const HomepagePhoto = ({ data }) => {
   return (
     <figure className="self-center flex-1 flex-grow min-w-full xs:min-w-full sm:min-w-full md:min-w-full lg:min-w-0">
-      <Zoom>
+      <Bounce delay={1500}>
         <Img
           fluid={data.HomepagePhoto.childImageSharp.fluid}
           alt="HomepagePhoto"
           css={css``}
           className="w-full rounded"
         />
-      </Zoom>
+      </Bounce>
     </figure>
   )
 }

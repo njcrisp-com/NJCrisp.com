@@ -51,7 +51,7 @@ const ToolCard = ({ node }) => {
               {node.name}
             </h1>
           </Fade>
-          <Fade top delay={500}>
+          <Fade bottom delay={1000}>
             <img
               src={node.logo.file.url}
               alt={`${node.name} logo`}
@@ -60,8 +60,8 @@ const ToolCard = ({ node }) => {
           </Fade>
         </div>
       </div>
-      <Fade top delay={750}>
-        <p className="content flex-1 flex-grow md:pt-16 px-2 lg:max-w-4xl">
+      <Fade right delay={1000}>
+        <p className="content lg:text-lg xl:text-xl flex-1 flex-grow md:pt-16 px-2 lg:max-w-4xl">
           {documentToReactComponents(node.description.json)}
         </p>
       </Fade>

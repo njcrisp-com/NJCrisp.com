@@ -196,7 +196,7 @@ const ContactPage = ({ data }) => (
     <SEO title="Contact" />
     <div className="lg:px-8 xl:px-20">
       <Introduction lightsOn data={data} />
-      <Fade top delay={500}>
+      <Fade bottom delay={1000}>
         <ContactForm />
       </Fade>
     </div>

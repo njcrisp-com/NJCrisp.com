@@ -20,7 +20,7 @@ const Showcase = ({ project }) => {
   console.log(project)
   return (
     <section
-      className="block pb-4 mb-8 md:mb-20 xs:min-h-screen md:min-h-0"
+      className="block py-4 my-8 md:my-20 xs:min-h-screen lg:min-h-0"
       css={css`
         scroll-snap-align: start;
       `}
@@ -46,7 +46,7 @@ const Showcase = ({ project }) => {
           </span>
         </Fade>
         <Player videoId={project.vimeoID} />
-        <p className="text container text-lg mt-8 content">
+        <p className="text container text-lg lg:text-xl xl:text-2xl mt-8 content">
           {documentToReactComponents(project.description.json)}
         </p>
         <div className="px-1">
@@ -64,6 +64,7 @@ const Showcase = ({ project }) => {
 
 const Showcases = ({ projects }) => (
   <div
+    className="md:mt-10 lg:mt-15 xl:mt-20"
     css={css`
       scroll-snap-type: y proximity;
       scroll-padding-top: 15vh;
@@ -83,7 +84,9 @@ const Portfolio = ({ data }) => (
       <SEO title="Sound Design Portfolio" />
       <div className="lg:px-8 xl:px-20 mx-auto">
         <Introduction data={data} />
-        <Showcases projects={data.showcases.edges} />
+        <Fade bottom delay={1000}>
+          <Showcases projects={data.showcases.edges} />
+        </Fade>
       </div>
     </div>
   </>

@@ -47,7 +47,7 @@ const Layout = ({ children, location }) => {
             <Fade top delay={1000}>
               <div
                 id="main"
-                className={`pt-2 md:pt-8 lg:pt-12 xl:pt-16 md:px-8 ${textColor} flex-auto flex-grow`}
+                className={`pt-2 md:px-8 ${textColor} flex-auto flex-grow`}
               >
                 <Transition location={location}>
                   <main>{children}</main>

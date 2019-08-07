@@ -64,7 +64,9 @@ const Header = ({ siteTitle, lightsOn }) => {
   const textColor = lightsOn ? "" : "text-white"
 
   return (
-    <header className={`mb-2 w-full pt-6 md:pt-12 ${textColor}`}>
+    <header
+      className={`mb-2 w-full pt-6 md:pl-6 md:pt-12 lg:pl-8 lg:pt-16 xl:pl-10 xl:pt-20 ${textColor}`}
+    >
       <div>
         <h1 className="capitalized text-4xl font-bold leading-none">
           <Link to="/" exact>
@@ -75,13 +77,6 @@ const Header = ({ siteTitle, lightsOn }) => {
                     src={data.Emblem.publicURL}
                     alt="NJCrisp.com Emblem"
                     className="h-auto w-full"
-                    css={
-                      lightsOn
-                        ? ""
-                        : css`
-                            filter: invert(1);
-                          `
-                    }
                   />
                 </Fade>
               </div>

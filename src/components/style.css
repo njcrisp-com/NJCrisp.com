@@ -74,5 +74,5 @@ h6 {
 @tailwind utilities;
 
 .bg-darkgray {
-  background-color: #090909;
+  background-color: hsl(0, 0%, 5.5%);
 }
