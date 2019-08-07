@@ -104,7 +104,7 @@ const AboutText = ({ data }) => {
 const IndexPage = ({ data }) => {
   return (
     <Fade>
-      <SEO title="Home/About" />
+      <SEO title="Sound Design & Audio Production" />
       <section id="about-wrapper">
         <div className="w-full max-w-screen m-auto h-full flex flex-wrap py-0 md:py-6 lg:py-20">
           <HomepagePhoto data={data} />
