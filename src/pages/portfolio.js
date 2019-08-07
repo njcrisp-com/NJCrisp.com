@@ -17,7 +17,6 @@ import Fade from "react-reveal/Fade"
 import Zoom from "react-reveal/Zoom"
 
 const Showcase = ({ project }) => {
-  console.log(project)
   return (
     <section
       className="block py-4 my-8 md:my-20 xs:min-h-screen lg:min-h-0"
