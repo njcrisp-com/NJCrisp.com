@@ -68,19 +68,19 @@ const Header = ({ siteTitle, lightsOn }) => {
       className={`h-auto min-h-0 mb-2 w-full pt-6 md:pl-6 md:pt-12 lg:pl-8 lg:pt-16 xl:pl-10 xl:pt-20 ${textColor}`}
     >
       <div>
-        <h1 className="capitalized text-4xl font-bold leading-none">
+        <div className="capitalized text-4xl font-bold leading-none">
           <Link to="/" exact>
             <div className="flex content-start items-start h-auto min-h-0">
-              <div className="flex flex-shrink self-start w-20 mx-2 mt-2 h-auto">
+              <div className="flex-initial flex-shrink self-start w-20 h-20 mx-2 mt-2 h-auto">
                 <Fade left delay={100}>
                   <img
                     src={data.Emblem.publicURL}
                     alt="NJCrisp.com Emblem"
-                    className="h-auto w-full"
+                    className="w-full"
                   />
                 </Fade>
               </div>
-              <div className="">
+              <div className="flex-initial">
                 <Fade left delay={200}>
                   <span
                     className="relative block leading-none m-0 tracking-tighter"
@@ -110,10 +110,10 @@ const Header = ({ siteTitle, lightsOn }) => {
                   </span>
                 </Fade>
               </div>
-              <div className="flex-grow pointer-events-none" />
+              <div className="flex-1 flex-grow pointer-events-none" />
             </div>
           </Link>
-        </h1>
+        </div>
         <Fade left delay={500}>
           <p
             className="leading-none m-0 tracking-tighter lowercase text-lg relative block"
