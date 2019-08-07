@@ -12,6 +12,10 @@ import { startsWith } from "ramda"
 
 import Fade from "react-reveal/Fade"
 
+import config from "react-reveal/globals"
+
+config({ ssrFadeout: true })
+
 const Layout = ({ children, location }) => {
   const lightsOn = !startsWith("/portfolio")(location.pathname)
 
