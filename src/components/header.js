@@ -65,13 +65,13 @@ const Header = ({ siteTitle, lightsOn }) => {
 
   return (
     <header
-      className={`mb-2 w-full pt-6 md:pl-6 md:pt-12 lg:pl-8 lg:pt-16 xl:pl-10 xl:pt-20 ${textColor}`}
+      className={`h-auto min-h-0 mb-2 w-full pt-6 md:pl-6 md:pt-12 lg:pl-8 lg:pt-16 xl:pl-10 xl:pt-20 ${textColor}`}
     >
       <div>
         <h1 className="capitalized text-4xl font-bold leading-none">
           <Link to="/" exact>
-            <div className="flex content-start">
-              <div className="flex flex-shrink self-start w-20 mx-2 mt-2">
+            <div className="flex content-start items-start h-auto min-h-0">
+              <div className="flex flex-shrink self-start w-20 mx-2 mt-2 h-auto">
                 <Fade left delay={100}>
                   <img
                     src={data.Emblem.publicURL}

@@ -91,7 +91,7 @@ const AboutText = ({ data }) => {
       id="about-text"
       className="w-64 flex-1 text-lg text-center lg:text-xl lg:text-left mx-4 lg:mx-12 xl:mx-20 lg:mt-0 mt-6 self-center max-w-6xl"
     >
-      <Zoom delay={250}>
+      <Zoom delay={750}>
         <div className="content md:text-xl lg:text-2xl px-4 ">
           {documentToReactComponents(data)}
         </div>
