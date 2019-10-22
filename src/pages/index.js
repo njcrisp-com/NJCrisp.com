@@ -73,14 +73,14 @@ const SecondaryNavigation = () => (
 const HomepagePhoto = ({ data }) => {
   return (
     <figure className="self-center flex-1 flex-grow min-w-full xs:min-w-full sm:min-w-full md:min-w-full lg:min-w-0">
-      <Bounce delay={1500}>
+      <Fade delay={1500}>
         <Img
           fluid={data.HomepagePhoto.childImageSharp.fluid}
           alt="HomepagePhoto"
           css={css``}
           className="w-full rounded"
         />
-      </Bounce>
+      </Fade>
     </figure>
   )
 }
@@ -103,7 +103,7 @@ const AboutText = ({ data }) => {
 
 const IndexPage = ({ data }) => {
   return (
-    <Fade>
+    <Fade delay={750}>
       <SEO title="Sound Design & Audio Production" />
       <section id="about-wrapper">
         <div className="w-full max-w-screen m-auto h-full flex flex-wrap py-0 md:py-6 lg:py-20">
