@@ -9,7 +9,7 @@ import Fade from "react-reveal/Fade"
 
 const Navbar = ({ activeLinkColor, linkColor }) => {
   return (
-    <nav>
+    <nav ssrFadeout>
       <ul
         className={`tracking-normal w-1/2 block list-none xl:text-3xl lg:text-2xl md:text-2xl sm:text-lg xs:text-base inline-flex leading-none pt-2 text-center font-light m-0 ${linkColor} overflow-visible max-w-screen`}
       >
@@ -66,13 +66,14 @@ const Header = ({ siteTitle, lightsOn }) => {
   return (
     <header
       className={`h-auto min-h-0 mb-2 w-full pt-6 md:pl-6 md:pt-12 lg:pl-8 lg:pt-16 xl:pl-10 xl:pt-20 ${textColor}`}
+      ssrFadeout
     >
       <div>
         <div className="capitalized text-4xl font-bold leading-none">
           <Link to="/" exact>
             <div className="flex content-start items-start h-auto min-h-0">
               <div className="flex-initial flex-shrink self-start w-20 h-20 mx-2 mt-2 h-auto">
-                <Fade left delay={100}>
+                <Fade left>
                   <img
                     src={data.Emblem.publicURL}
                     alt="NJCrisp.com Emblem"
@@ -89,7 +90,7 @@ const Header = ({ siteTitle, lightsOn }) => {
                     Natan
                   </span>
                 </Fade>
-                <Fade left delay={300}>
+                <Fade left delay={400}>
                   <span
                     className="relative block leading-none m-0 tracking-tighter"
                     css={css`
@@ -99,7 +100,7 @@ const Header = ({ siteTitle, lightsOn }) => {
                     James
                   </span>
                 </Fade>
-                <Fade left delay={400}>
+                <Fade left delay={600}>
                   <span
                     className="relative block leading-none m-0 tracking-tighter"
                     css={css`
@@ -143,5 +144,7 @@ Header.propTypes = {
 Header.defaultProps = {
   lightsOn: true,
 }
+
+console.log("SSR fadeout version")
 
 export default Header
